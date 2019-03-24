@@ -6,7 +6,6 @@ import ProjectList from '../../containers/ProjectList/ProjectList';
 export const ProjectSection = () => {
     return (
         <div className="ProjectSection">
-            <p>ProjectSection</p>
             <ProjectControls/>
             <Search/>
             <ProjectList/>

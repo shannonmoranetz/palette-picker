@@ -19,7 +19,6 @@ export class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>App</p>
           <Header />
           <ParentSection />
         </header>
