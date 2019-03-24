@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
+import { fetchProjects } from '../../thunks/fetchProjects';
+import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
 import PaletteSection from '../../components/PaletteSection/PaletteSection';
 import ProjectSection from '../../components/ProjectSection/ProjectSection';
 
 class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      projects: []
     }
   }
 
   componentDidMount = async () => {
-    const response = await fetch('https://palette-picker-api.herokuapp.com/api/v1/projects')
-    const result = await response.json()
-    this.setState({ projects: result })
+    await this.props.fetchProjects();
   }
 
   render() {
@@ -31,4 +30,12 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapStateToProps = (state) => ({
+  projects: state.projects
+});
+
+export const mapDispatchToProps = (dispatch) => ({
+  fetchProjects: () => dispatch(fetchProjects())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
