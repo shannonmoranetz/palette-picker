@@ -6,7 +6,17 @@ import ProjectSection from '../../components/ProjectSection/ProjectSection';
 class App extends Component {
   constructor() {
     super()
+    this.state = {
+      projects: []
+    }
   }
+
+  componentDidMount = async () => {
+    const response = await fetch('https://palette-picker-api.herokuapp.com/api/v1/projects')
+    const result = await response.json()
+    this.setState({ projects: result })
+  }
+
   render() {
     return (
       <div className="App">
