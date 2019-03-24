@@ -1,6 +1,12 @@
-.ParentSection {
+.section-headers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-container {
   border: 2px solid black;
   display: flex;
   flex-flow: wrap;
+  height: 89.5vh;
   justify-content: space-between;
 }
