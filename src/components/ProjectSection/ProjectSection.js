@@ -2,7 +2,9 @@ import React from 'react';
 
 export const ProjectSection = () => {
     return (
-        <div className="ProjectSection">ProjectSection</div>
+        <div className="ProjectSection">
+            <p>ProjectSection</p>
+        </div>
     )
 }
 

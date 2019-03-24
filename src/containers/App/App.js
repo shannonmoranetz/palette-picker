@@ -5,7 +5,7 @@ import Header from '../../components/Header/Header';
 import PaletteSection from '../../components/PaletteSection/PaletteSection';
 import ProjectSection from '../../components/ProjectSection/ProjectSection';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          App
+          <p>App</p>
           <Header />
           <PaletteSection />
           <ProjectSection />
