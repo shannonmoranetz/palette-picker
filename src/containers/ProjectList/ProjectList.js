@@ -5,27 +5,6 @@ import uuid from 'uuid/v4';
 
 export class ProjectList extends Component {
 
-  findMatchingPalette = (project) => {
-    const match = this.props.palettes.find(palette => {
-      let projectId = this.props.projects.map(project => {
-        return project.id
-      })
-      return palette.project_id === projectId[0]
-    })
-    return match;
-  }
-
-  returnMatchingPalette = () => {
-    const matchingPalette = this.findMatchingPalette();
-    return matchingPalette;
-  }
-
-  // returnMatchingPaletteColors = () => {
-
-  // }
-
-  returnProjectCards = () => {}
-
   render() {
     const { projects, palettes } = this.props;
     return (
@@ -35,7 +14,7 @@ export class ProjectList extends Component {
             <p className="projectlist-subtitle">Your Creations:</p>
             {
               projects.map(project => {
-                return <ProjectCard key={uuid()} projectName={project.name} palette={this.returnMatchingPalette()} project={project} />
+                return <ProjectCard key={uuid()} projectName={project.name} />
               })
             }
           </div>
