@@ -4,7 +4,7 @@ export const palettesReducer = (state = [], action) => {
       let palettes = []
       action.palettes.palettes.forEach((palette) => {
         this.state.forEach((existingPalette) => {
-          if (palette.id != existingPalette.id) {
+          if (palette.project_id != existingPalette.id) {
             palettes.push(palette)
             // console.log(palettes)
           }

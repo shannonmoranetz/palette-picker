@@ -11,6 +11,7 @@ export class ProjectCard extends Component {
   }
 
   fetchPaletteById = (project) => {
+
     this.props.fetchPalettes(project.id)
   }
 
