@@ -1,3 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProjectList should properly render the component elements 1`] = `undefined`;
+exports[`ProjectList should properly render the component elements 1`] = `
+<div
+  className="ProjectList"
+>
+  <p
+    className="projects-reminder"
+  >
+    No saved projects.
+  </p>
+</div>
+`;

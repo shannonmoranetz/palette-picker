@@ -9,7 +9,7 @@ describe('ProjectList', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ProjectList projects={projectsMock} palettes={palettesMock} />
+        <ProjectList projects={projectsMock} palettes={palettesMock} />
       )
     });
   it('should properly render the component elements', () => {
