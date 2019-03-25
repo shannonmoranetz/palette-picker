@@ -19,7 +19,7 @@ export class App extends Component {
   initialFetch = async () => {
     const initialPaletteId = 1;
     await this.props.fetchProjects();
-    // await this.props.fetchPalettes(initialPaletteId);
+    await this.props.fetchPalettes(initialPaletteId);
   }
 
   render() {
