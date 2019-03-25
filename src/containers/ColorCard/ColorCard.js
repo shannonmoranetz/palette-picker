@@ -5,14 +5,15 @@ import { faUnlock } from '@fortawesome/free-solid-svg-icons';
 
 export class ColorCard extends Component {
   render() {
-    const { palette } = this.props;
+    console.log(this.props.color)
     return (
       <div className="ColorCard">
-        <p className="hexcode">#ffffff</p>
-        <FontAwesomeIcon icon={faLock} className="lock-icon"/>
+            <p className="hexcode">#{this.props.color}</p>
+            <FontAwesomeIcon icon={faLock} className="lock-icon" />
       </div>
     );
   }
 }
 
 export default ColorCard;
+
