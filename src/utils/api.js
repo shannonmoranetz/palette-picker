@@ -25,4 +25,3 @@ export const fetchData = async (url, method, data = null) => {
       throw Error(`Error on fetching data: ${response.statusText}`);
     }
 };
-

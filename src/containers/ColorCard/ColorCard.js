@@ -5,7 +5,6 @@ import { faUnlock } from '@fortawesome/free-solid-svg-icons';
 
 export class ColorCard extends Component {
   render() {
-    console.log(this.props.color)
     return (
       <div className="ColorCard">
             <p className="hexcode">#{this.props.color}</p>

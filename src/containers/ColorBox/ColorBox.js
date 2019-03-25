@@ -32,8 +32,7 @@ export class ColorBox extends Component {
 					</div>
 				) : (
 						<p className="loading-text">Loading...</p>
-					)
-				}
+					)}
 			</div>
 		)
 	}

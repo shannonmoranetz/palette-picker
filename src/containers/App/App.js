@@ -26,10 +26,14 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
+				{!this.props.isLoading && !this.props.error ? (
         <header className="App-header">
           <Header />
           <ParentSection />
         </header>
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
     );
   }
@@ -38,7 +42,9 @@ export class App extends Component {
 export const mapStateToProps = (state) => ({
   projects: state.projects,
   palettes: state.palettes,
-  currentPalette: state.currentPalette
+  currentPalette: state.currentPalette,
+  isLoading: state.isLoading,
+  error: state.error
 });
 
 export const mapDispatchToProps = (dispatch) => ({
