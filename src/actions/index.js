@@ -18,7 +18,7 @@ export const setPalettes = (palettes) => ({
   palettes
 });
 
-export const setCurrentPalette = (palette) => ({
-  type: 'SET_CURRENT_PALETTE', 
-  palette
+export const setCurrentPaletteId = (paletteId) => ({
+  type: 'SET_CURRENT_PALETTE_ID', 
+  paletteId
 });

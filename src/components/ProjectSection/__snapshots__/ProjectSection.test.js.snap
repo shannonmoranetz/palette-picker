@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectSection should properly render the component elements 1`] = `
+<div
+  className="ProjectSection"
+>
+  <div
+    className="subheading-container"
+  >
+    <h2
+      className="project-header"
+    >
+      PROJECT 1
+    </h2>
+  </div>
+  <div
+    className="content-container"
+  >
+    <ProjectControls />
+    <Search />
+    <Connect(ProjectList) />
+  </div>
+</div>
+`;

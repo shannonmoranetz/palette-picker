@@ -1,9 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { shallow } from 'enzyme';
+import { App, mapStateToProps, mapDispatchToProps } from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+const fetchProjectsMock = jest.fn();
+const fetchPalettesMock = jest.fn();
+const setCurrentPaletteIdMock = jest.fn();
+
+describe('App', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(
+      <App 
+        fetchProjects={fetchProjectsMock}
+        fetchPalettes={fetchPalettesMock}
+        setCurrentPaletteId={setCurrentPaletteIdMock}
+      />
+      )
+    });
+  it('should properly render the component elements', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+  it.skip('Should call initialFetch on mount', () => {
+    const initialFetch = jest.fn();
+    wrapper.instance().componentDidMount();
+    expect(initialFetch).toHaveBeenCalled();
+  });
+  it.skip('InitialFetch should call fetchProjects and fetchPalettes', async () => {
+  });
+  describe('mapStateToProps', () => {
+  });
+  describe('mapDispatchToProps', () => {
+  });
 });

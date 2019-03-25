@@ -6,15 +6,15 @@ import uuid from 'uuid/v4';
 export class ProjectList extends Component {
 
   render() {
-    const { projects, palettes } = this.props;
+    const { projects } = this.props;
     return (
       <div className="ProjectList">
-				{projects.length && palettes.length ? (
+				{projects.length ? (
           <div className="mapped-projects">
             <p className="projectlist-subtitle">Your Creations:</p>
             {
               projects.map(project => {
-                return <ProjectCard key={uuid()} projectName={project.name} />
+                return <ProjectCard key={uuid()} project={project} />
               })
             }
           </div>
@@ -27,8 +27,7 @@ export class ProjectList extends Component {
 }
 
 export const mapStateToProps = (state) => ({
-  projects: state.projects,
-  palettes: state.palettes
+  projects: state.projects
 });
 
 export default connect(mapStateToProps)(ProjectList);

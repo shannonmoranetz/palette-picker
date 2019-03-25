@@ -3,12 +3,12 @@ import { projectsReducer } from './projectsReducer';
 import { errorReducer } from './errorReducer';
 import { loadingReducer } from './loadingReducer';
 import { palettesReducer } from './palettesReducer';
-import { currentPaletteReducer } from './currentPaletteReducer';
+import { currentPaletteIdReducer } from './currentPaletteIdReducer';
 
 const rootReducer = combineReducers({
   projects: projectsReducer,
   palettes: palettesReducer,
-  currentPalette: currentPaletteReducer,
+  currentPaletteId: currentPaletteIdReducer,
   error: errorReducer,
   isLoading: loadingReducer
 });

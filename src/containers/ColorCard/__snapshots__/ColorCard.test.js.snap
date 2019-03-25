@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorCard should properly render the component elements 1`] = `
+<div
+  className="ColorCard"
+>
+  <p
+    className="hexcode"
+  >
+    #
+  </p>
+  <FontAwesomeIcon
+    border={false}
+    className="lock-icon"
+    fixedWidth={false}
+    flip={null}
+    icon={
+      Object {
+        "icon": Array [
+          448,
+          512,
+          Array [],
+          "f023",
+          "M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z",
+        ],
+        "iconName": "lock",
+        "prefix": "fas",
+      }
+    }
+    inverse={false}
+    listItem={false}
+    mask={null}
+    pull={null}
+    pulse={false}
+    rotation={null}
+    size={null}
+    spin={false}
+    symbol={false}
+    title=""
+    transform={null}
+  />
+</div>
+`;

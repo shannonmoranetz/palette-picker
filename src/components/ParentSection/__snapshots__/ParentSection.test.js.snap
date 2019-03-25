@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ParentSection should properly render the component elements 1`] = `
+<div
+  className="ParentSection"
+>
+  <PaletteSection />
+  <ProjectSection />
+</div>
+`;
