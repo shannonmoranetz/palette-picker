@@ -6,9 +6,14 @@ import ProjectList from '../../containers/ProjectList/ProjectList';
 export const ProjectSection = () => {
     return (
         <div className="ProjectSection">
-            <ProjectControls/>
-            <Search/>
-            <ProjectList/>
+            <div className="subheading-container">
+                <h2 className="project-header">PROJECT 1</h2>
+            </div>
+            <div className="content-container">
+                <ProjectControls/>
+                <Search/>
+                <ProjectList/>
+            </div>
         </div>
     )
 }
