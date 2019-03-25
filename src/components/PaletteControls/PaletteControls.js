@@ -4,7 +4,7 @@ export class PaletteControls extends Component {
   render() {
     return (
       <div className="PaletteControls">
-        <p>PaletteControls</p>
+        <button classname="generate-button">Generate New Palette!</button>
       </div>
     );
   }
