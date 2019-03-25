@@ -7,12 +7,12 @@ import { fetchPalettes } from '../../thunks/fetchPalettes';
 
 export class ProjectCard extends Component {
   componentDidMount = () => {
-    this.fetchPaletteById(this.props.project)
+    // this.fetchPaletteById(this.props.project)
   }
 
   fetchPaletteById = (project) => {
 
-    this.props.fetchPalettes(project.id)
+    // this.props.fetchPalettes(project.id)
   }
 
   render() {
