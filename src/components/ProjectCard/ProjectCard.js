@@ -14,6 +14,7 @@ export class ProjectCard extends Component {
               <button className="load-button"><FontAwesomeIcon icon={faEdit} className="load-icon"/></button>
               <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="deelete-icon"/></button>
           </div>
+        <button className="delete-project-button">Delete Project</button>
       </div>
     );
   }

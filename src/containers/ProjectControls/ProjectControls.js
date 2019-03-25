@@ -5,12 +5,12 @@ export class ProjectControls extends Component {
     return (
       <div className="ProjectControls">
         <form className="create-project-form">
-          <label for="create-project">Create your project:</label>
+          <label htmlFor="create-project">Create your project:</label>
           <input type="text" name="create-project" className="create-project-input"></input>
           <button type="submit">Save Project</button>
         </form>
         <form className="save-palette-form">
-          <label for="save-palette" className="save-palette-label">Save your palette:</label>
+          <label htmlFor="save-palette" className="save-palette-label">Save your palette:</label>
           <input type="text" name="save-palette" className="save-palette-input"></input>
           <select>
             <option value="default">Save to:</option>

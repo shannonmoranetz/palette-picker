@@ -5,7 +5,7 @@ export class Search extends Component {
     return (
       <div className="Search">
         <form className="search-form">
-          <label for="search" className="search-label">Search by hexcode, palette, or project:</label>
+          <label htmlFor="search" className="search-label">Search by hexcode, palette, or project:</label>
           <input type="text" name="search" className="search-input"></input>
           <button type="submit">Search</button>
         </form>

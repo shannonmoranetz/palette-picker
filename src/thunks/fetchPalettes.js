@@ -1,13 +1,13 @@
-import { setLoading, setError, setProjects } from '../actions';
+import { setLoading, setError, setPalettes } from '../actions';
 import { fetchData } from '../utils/api.js';
 
-export const fetchProjects = () => {
-  const endpoint = '/projects';
+export const fetchPalettes = (id) => {
+  let endpoint = `/projects/${id}/palettes`;
   return async (dispatch) => {
     try {
       dispatch(setLoading(true));
       const result = await fetchData(endpoint, 'GET');
-      dispatch(setProjects(result));
+      dispatch(setPalettes(result));
       dispatch(setLoading(false));
     } catch (error) {
       dispatch(setError(error));
