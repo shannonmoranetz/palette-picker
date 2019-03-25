@@ -20,8 +20,11 @@ export const fetchData = async (url, method, data = null) => {
   const response = await fetch(`https://palette-picker-api.herokuapp.com/api/v1${url}`, options);
 
   if (response.ok) {
-      return await response.json();
-    } else {
+    return await response.json();
+  } else if (response.status === 404) {
+    let empty = []
+    return empty
+  } else {
       throw Error(`Error on fetching data: ${response.statusText}`);
     }
 };

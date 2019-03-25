@@ -19,13 +19,13 @@ export class App extends Component {
   initialFetch = async () => {
     const initialPaletteId = 1;
     await this.props.fetchProjects();
-    await this.props.fetchPalettes(initialPaletteId);
+    // await this.props.fetchPalettes(initialPaletteId);
   }
 
   render() {
     return (
       <div className="App">
-				{!this.props.isLoading && !this.props.error ? (
+				{!this.props.isLoading ? (
         <header className="App-header">
           <Header />
           <ParentSection />

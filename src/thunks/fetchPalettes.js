@@ -7,8 +7,13 @@ export const fetchPalettes = (id) => {
     try {
       dispatch(setLoading(true));
       const result = await fetchData(endpoint, 'GET');
-      dispatch(setPalettes(result));
+      console.log(result)
+      if (result.palettes.length) {
+        dispatch(setPalettes(result));
       dispatch(setLoading(false));
+      } else {
+        dispatch(setLoading(false));
+      }
     } catch (error) {
       dispatch(setError(error));
     }
