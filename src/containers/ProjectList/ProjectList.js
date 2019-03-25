@@ -9,7 +9,7 @@ export class ProjectList extends Component {
     const { projects, palettes } = this.props;
     return (
       <div className="ProjectList">
-				{projects.length && palettes.length ? (
+				{projects.length ? (
           <div className="mapped-projects">
             <p className="projectlist-subtitle">Your Creations:</p>
             {

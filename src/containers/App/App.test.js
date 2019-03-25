@@ -4,7 +4,7 @@ import { App, mapStateToProps, mapDispatchToProps } from './App';
 
 const fetchProjectsMock = jest.fn();
 const fetchPalettesMock = jest.fn();
-const setCurrentPaletteMock = jest.fn();
+const setCurrentPaletteIdMock = jest.fn();
 
 describe('App', () => {
   let wrapper;
@@ -13,7 +13,7 @@ describe('App', () => {
       <App 
         fetchProjects={fetchProjectsMock}
         fetchPalettes={fetchPalettesMock}
-        setCurrentPalette={setCurrentPaletteMock}
+        setCurrentPaletteId={setCurrentPaletteIdMock}
       />
       )
     });

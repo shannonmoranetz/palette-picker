@@ -14,9 +14,9 @@ export class ColorBox extends Component {
 	}
 
 	findCurrentPaletteColors = () => {
-		const  { palettes, currentPalette } = this.props;
+		const  { palettes, currentPaletteId } = this.props;
 		const matchingPalette = palettes.find((palette) => {
-			return palette.id === currentPalette
+			return palette.id === currentPaletteId
 		})
 		const { color1, color2, color3, color4, color5 } = matchingPalette;
 		let paletteColors = [ color1, color2, color3, color4, color5 ]
@@ -40,7 +40,7 @@ export class ColorBox extends Component {
 
 export const mapStateToProps = (state) => ({
 	palettes: state.palettes,
-	currentPalette: state.currentPalette
+	currentPaletteId: state.currentPaletteId
 });
 
 export default connect(mapStateToProps)(ColorBox);
