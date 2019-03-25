@@ -1,17 +1,7 @@
-.section-headers {
-  display: flex;
-  justify-content: space-between;
-  color: grey;
-}
-
-.section-container {
+.ParentSection {
   border: 2px solid black;
   display: flex;
   flex-flow: wrap;
   height: 85vh;
   justify-content: space-between;
-}
-
-.palette-header {
-  margin-left: 40%;
 }

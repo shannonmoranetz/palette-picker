@@ -5,6 +5,7 @@ export class PaletteControls extends Component {
     return (
       <div className="PaletteControls">
         <button classname="generate-button">Generate New Palette!</button>
+        <h2 className="palette-header">PALETTE 1</h2>
       </div>
     );
   }
