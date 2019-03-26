@@ -27,3 +27,8 @@ export const setCurrentProjectName = (projectName) => ({
   type: 'SET_CURRENT_PROJECT_NAME', 
   projectName
 });
+
+export const setRandomHexcodes = (hexcodes) => ({
+  type: 'SET_RANDOM_HEXCODES', 
+  hexcodes
+});

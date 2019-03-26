@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { setRandomHexcodes } from '../../actions/index';
 
 export class PaletteControls extends Component {
 
@@ -23,8 +24,7 @@ export class PaletteControls extends Component {
       let hexcode = hexStringArray.join('')
       newColors.push(hexcode)
     }
-    console.log(newColors)
-    return newColors;
+    this.props.setRandomHexcodes(newColors)
   }
 
   render() {
@@ -45,7 +45,12 @@ export class PaletteControls extends Component {
 
 export const mapStateToProps = (state) => ({
   palettes: state.palettes,
-  currentPaletteId: state.currentPaletteId
+  currentPaletteId: state.currentPaletteId,
+  randomHexcodes: state.randomHexcodes
 });
 
-export default connect(mapStateToProps)(PaletteControls);
+export const mapDispatchToProps = (dispatch) => ({
+  setRandomHexcodes: (hexcodes) => dispatch(setRandomHexcodes(hexcodes))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PaletteControls);

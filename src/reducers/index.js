@@ -5,12 +5,14 @@ import { loadingReducer } from './loadingReducer';
 import { palettesReducer } from './palettesReducer';
 import { currentPaletteIdReducer } from './currentPaletteIdReducer';
 import { currentProjectNameReducer } from './currentProjectNameReducer';
+import { randomHexcodesReducer } from './randomHexcodesReducer';
 
 const rootReducer = combineReducers({
   projects: projectsReducer,
   palettes: palettesReducer,
   currentPaletteId: currentPaletteIdReducer,
   currentProjectName: currentProjectNameReducer,
+  randomHexCodes: randomHexcodesReducer,
   error: errorReducer,
   isLoading: loadingReducer
 });
