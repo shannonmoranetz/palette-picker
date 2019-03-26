@@ -12,7 +12,7 @@ export class PaletteControls extends Component {
     return matchingPalette.name;
   }
 
-  generateRandomColors = () => {
+  generateRandomColors = async () => {
     let possibleHexValues = "0123456789ABCDEF";
     let newColors = [];
     for (let i = 0; i < 5; i++) {
@@ -24,8 +24,8 @@ export class PaletteControls extends Component {
       let hexcode = hexStringArray.join('');
       newColors.push(hexcode);
     }
-    this.props.setRandomHexcodes(newColors);
-    this.props.toggleDisplayRandom(true);
+    await this.props.setRandomHexcodes(newColors);
+    await this.props.toggleDisplayRandom(true);
   }
 
   render() {

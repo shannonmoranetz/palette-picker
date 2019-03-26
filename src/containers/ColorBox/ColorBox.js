@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ColorCard from '../../containers/ColorCard/ColorCard';
 import uuid from 'uuid/v4';
-import { toggleDisplayRandom } from '../../actions/index';
 
 export class ColorBox extends Component {
 
@@ -17,7 +16,7 @@ export class ColorBox extends Component {
 	findCurrentPaletteColors = () => {
 		const  { palettes, currentPaletteId, randomHexcodes, shouldDisplayRandom } = this.props;
 		let paletteColors;
-		let randomColors = { 
+		let randomColors = {
 			color1: randomHexcodes[0], 
 			color2: randomHexcodes[1], 
 			color3: randomHexcodes[2], 
@@ -59,9 +58,4 @@ export const mapStateToProps = (state) => ({
 	shouldDisplayRandom: state.shouldDisplayRandom
 });
 
-export const mapDispatchToProps = (dispatch) => ({
-  toggleDisplayRandom: (shouldDisplay) => dispatch(toggleDisplayRandom(shouldDisplay))
-});
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(ColorBox);
+export default connect(mapStateToProps)(ColorBox);
