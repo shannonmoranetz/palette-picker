@@ -22,12 +22,13 @@ export class ProjectCard extends Component {
       const { name, color1, color2, color3, color4, color5 } = palette;
         return (
           <div key={uuid()} className="mapped-palettes">
-            <p className="palette-name" id={this.createPaletteId(i)} >{name}</p>
-            <div className="color-minibox" id={this.createPaletteId(i)} style={{backgroundColor: `#${color1}`}}> </div>
-            <div className="color-minibox" id={this.createPaletteId(i)} style={{backgroundColor: `#${color2}`}}> </div>
-            <div className="color-minibox" id={this.createPaletteId(i)} style={{backgroundColor: `#${color3}`}}> </div>
-            <div className="color-minibox" id={this.createPaletteId(i)} style={{backgroundColor: `#${color4}`}}> </div>
-            <div className="color-minibox" id={this.createPaletteId(i)} style={{backgroundColor: `#${color5}`}}> </div>
+            <span id={this.createPaletteId(i) className="palette-name">{name}</span>
+            <span className="color-minibox" id={this.createPaletteId(i)} style={{ backgroundColor: `#${color1}`}}></span>
+            <span className="color-minibox" id={this.createPaletteId(i)} style={{ backgroundColor: `#${color2}`}}></span>
+            <span className="color-minibox" id={this.createPaletteId(i)} style={{ backgroundColor: `#${color3}`}}></span>
+            <span className="color-minibox" id={this.createPaletteId(i)} style={{ backgroundColor: `#${color4}`}}></span>
+            <span className="color-minibox" id={this.createPaletteId(i)} style={{ backgroundColor: `#${color5}`}}></span>
+            <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="delete-icon"/></button>
           </div>
         )
       })
@@ -73,7 +74,7 @@ export class ProjectCard extends Component {
       <div className="ProjectCard">
         {this.props.palettes.length ? (
           <div onClick={() => this.updateProjectName()}>
-            <p className="project-name" onClick={(e) => this.updateSelectedPalette(e)}>{project.name}</p>
+            <p className="project-name" onClick={(e) => this.updateSelectedPalette(e)}>{project.name.toUpperCase()}</p>
               <div className="palette-container" onClick={(e) => this.updateSelectedPalette(e)}>
                   { this.returnElements() }
                   <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="delete-icon"/></button>

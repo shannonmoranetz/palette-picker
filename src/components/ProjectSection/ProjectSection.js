@@ -8,7 +8,7 @@ export const ProjectSection = (props) => {
     return (
         <div className="ProjectSection">
             <div className="subheading-container">
-                <h2 className="project-header">{props.currentProjectName}</h2>
+                <h2 className="project-header">{props.currentProjectName.toUpperCase()}</h2>
             </div>
             <div className="content-container">
                 <ProjectControls/>

@@ -7,7 +7,7 @@ export class ColorCard extends Component {
   render() {
     return (
       <div className="ColorCard" style={{backgroundColor: `#${this.props.color}`}}>
-            <FontAwesomeIcon icon={faLock} className="lock-icon"/>
+            <FontAwesomeIcon icon={faUnlock} className="lock-icon"/>
             <p className="hexcode">#{this.props.color}</p>
       </div>
     );

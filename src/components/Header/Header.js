@@ -9,9 +9,9 @@ export const Header = () => {
                 <FontAwesomeIcon icon={faFire} className="fire-icon"/>
                 <h1 className="title">pa<span className="title-em">Lit</span></h1>
             </div>
-            <div className="subtitle-container">
+            {/* <div className="subtitle-container">
                 <p className="subtitle">Find and save your favorite colors</p>
-            </div>
+            </div> */}
         </div>
     )
 }
