@@ -21,11 +21,11 @@ export class ProjectCard extends Component {
         return (
           <div key={uuid()} className="mapped-palettes">
             <p className="palette-name">{name}</p>
-            <p className="color-minibox">color1: {color1}</p>
-            <p className="color-minibox">color2: {color2}</p>
-            <p className="color-minibox">color3: {color3}</p>
-            <p className="color-minibox">color4: {color4}</p>
-            <p className="color-minibox">color5: {color5}</p>
+            <div className="color-minibox" style={{backgroundColor: `#${color1}`}}> </div>
+            <div className="color-minibox" style={{backgroundColor: `#${color2}`}}> </div>
+            <div className="color-minibox" style={{backgroundColor: `#${color3}`}}> </div>
+            <div className="color-minibox" style={{backgroundColor: `#${color4}`}}> </div>
+            <div className="color-minibox" style={{backgroundColor: `#${color5}`}}> </div>
           </div>
         )
       })
