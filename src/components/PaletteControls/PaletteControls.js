@@ -25,7 +25,7 @@ export class PaletteControls extends Component {
       newColors.push(hexcode);
     }
     this.props.setRandomHexcodes(newColors);
-    this.props.toggleDisplayRandom(false);
+    this.props.toggleDisplayRandom(true);
   }
 
   render() {

@@ -15,7 +15,7 @@ export class ColorBox extends Component {
 	}
 
 	findCurrentPaletteColors = () => {
-		const  { palettes, currentPaletteId, randomHexcodes, shouldDisplayRandom, toggleDisplayRandom } = this.props;
+		const  { palettes, currentPaletteId, randomHexcodes, shouldDisplayRandom } = this.props;
 		let paletteColors;
 		let randomColors = { 
 			color1: randomHexcodes[0], 
@@ -24,10 +24,9 @@ export class ColorBox extends Component {
 			color4: randomHexcodes[3], 
 			color5: randomHexcodes[4] 
 		}
-		if (shouldDisplayRandom !== true) {
+		if (shouldDisplayRandom === true) {
 			const { color1, color2, color3, color4, color5 } = randomColors;
 			paletteColors = [ color1, color2, color3, color4, color5 ];
-			toggleDisplayRandom(false)
 		} else {
 			let matchingPalette = palettes.find((palette) => {
 				return palette.id === currentPaletteId || randomColors
