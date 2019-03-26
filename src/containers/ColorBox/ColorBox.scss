@@ -1,5 +1,5 @@
 .ColorBox {
     border: 2px solid tomato;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    height: 100%;
 }

@@ -25,7 +25,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-				{!this.props.isLoading && !this.props.error ? (
+				{!this.props.isLoading ? (
         <header className="App-header">
           <Header />
           <ParentSection />

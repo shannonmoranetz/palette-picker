@@ -2,8 +2,19 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
+import { fetchPalettes } from '../../thunks/fetchPalettes';
 
 export class ProjectCard extends Component {
+  componentDidMount = () => {
+    // this.fetchPaletteById(this.props.project)
+  }
+
+  fetchPaletteById = (project) => {
+
+    // this.props.fetchPalettes(project.id)
+  }
+
   render() {
     const { project } = this.props;
     return (
@@ -21,4 +32,12 @@ export class ProjectCard extends Component {
   }
 }
 
-export default ProjectCard;
+export const mapStateToProps = (state) => ({
+  palettes: state.palettes
+});
+
+export const mapDispatchToProps = (dispatch) => ({
+  fetchPalettes: (id) => dispatch(fetchPalettes(id))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectCard);
