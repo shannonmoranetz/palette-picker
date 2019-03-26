@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ColorCard from '../../containers/ColorCard/ColorCard';
 import uuid from 'uuid/v4';
+import { toggleDisplayRandom } from '../../actions/index';
 
 export class ColorBox extends Component {
+
 	returnColorCards = () => {
 		const paletteColors = this.findCurrentPaletteColors();
 		const colorCards = paletteColors.map((color) => {
@@ -13,19 +15,26 @@ export class ColorBox extends Component {
 	}
 
 	findCurrentPaletteColors = () => {
-		const  { palettes, currentPaletteId } = this.props;
-		let matchingPalette = palettes.find((palette) => {
-			return palette.id === currentPaletteId || 
-			{ 
-				color1: 'default', 
-				color2: 'default', 
-				color3: 'default', 
-				color4: 'default', 
-				color5: 'default' 
-			}
-		});
-		const { color1, color2, color3, color4, color5 } = matchingPalette;
-		let paletteColors = [ color1, color2, color3, color4, color5 ];
+		const  { palettes, currentPaletteId, randomHexcodes, shouldDisplayRandom, toggleDisplayRandom } = this.props;
+		let paletteColors;
+		let randomColors = { 
+			color1: randomHexcodes[0], 
+			color2: randomHexcodes[1], 
+			color3: randomHexcodes[2], 
+			color4: randomHexcodes[3], 
+			color5: randomHexcodes[4] 
+		}
+		if (shouldDisplayRandom !== true) {
+			const { color1, color2, color3, color4, color5 } = randomColors;
+			paletteColors = [ color1, color2, color3, color4, color5 ];
+			toggleDisplayRandom(false)
+		} else {
+			let matchingPalette = palettes.find((palette) => {
+				return palette.id === currentPaletteId || randomColors
+			});
+			const { color1, color2, color3, color4, color5 } = matchingPalette;
+			paletteColors = [ color1, color2, color3, color4, color5 ];
+		}
 		return paletteColors;
 	};
 
@@ -46,7 +55,14 @@ export class ColorBox extends Component {
 
 export const mapStateToProps = (state) => ({
 	palettes: state.palettes,
-	currentPaletteId: state.currentPaletteId
+	currentPaletteId: state.currentPaletteId,
+	randomHexcodes: state.randomHexcodes,
+	shouldDisplayRandom: state.shouldDisplayRandom
 });
 
-export default connect(mapStateToProps)(ColorBox);
+export const mapDispatchToProps = (dispatch) => ({
+  toggleDisplayRandom: (shouldDisplay) => dispatch(toggleDisplayRandom(shouldDisplay))
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ColorBox);
