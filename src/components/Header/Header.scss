@@ -1,18 +1,26 @@
 .Header {
     align-items: center;
+    height: 62.5px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    background-color: #bbedf3;
+    border-bottom: 4.5px solid #4e4e4e;
+    padding: 5px;
 }
 
 .title-container {
     display: flex;
+    flex-direction: column;
 }
 
 .title {
+    display: relative;
     font-size: 55px;
+    letter-spacing: 1.5px;
     font-family: 'Allerta Stencil', sans-serif;
     margin: 0;
+    margin-left: 10px;
+    color: #4e4e4e;
 }
 
 .title-em {
@@ -22,7 +30,7 @@
 }
 
 .fire-icon {
-    margin-left: 75px;
+    margin-left: 109px;
     margin-top: 10px;
     margin-bottom: -18px;
     color: tomato;
@@ -32,5 +40,9 @@
 .subtitle {
     font-size: 20px;
     font-style: italic;
-    margin: 10px;
+    margin-top: 55px;
+    margin-right: 10px;
+    display: relative;
+    right: 0;
+    color: #4e4e4e;
 }

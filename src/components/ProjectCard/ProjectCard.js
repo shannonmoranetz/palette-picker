@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
 
 export class ProjectCard extends Component {
-
 	findProjectPalette = () => {
     const  { palettes, project } = this.props;
 		const matchingPalettes = palettes.filter((palette) => {

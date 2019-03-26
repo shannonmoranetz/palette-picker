@@ -1,10 +1,18 @@
 .ColorCard {
     border: 1px solid purple;
     padding: 10px;
+    height: 200%;
 }
 
 .lock-icon {
     color: grey;
     position: relative;
+    top: 50%;
     left: 50%;
+    font-size: 32px;
+}
+
+.hexcode {
+    position: relative;
+    left: 0%;
 }

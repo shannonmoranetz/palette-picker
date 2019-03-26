@@ -1,5 +1,4 @@
 .ProjectSection {
-    width: 49%;
     display: flex;
     flex-direction: column;
 }
@@ -13,6 +12,12 @@
 }
 
 .project-header {
+    font-family: 'Allerta Stencil', sans-serif;
     text-align: right;
     color: grey;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 32px;
 }

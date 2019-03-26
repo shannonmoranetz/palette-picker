@@ -1,7 +1,6 @@
 .ParentSection {
-  border: 2px solid black;
-  display: flex;
-  flex-flow: wrap;
-  height: 85vh;
-  justify-content: space-between;
+  border-bottom: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 90vh;
 }
