@@ -6,12 +6,6 @@ import Header from '../../components/Header/Header';
 import ParentSection from '../../components/ParentSection/ParentSection';
 
 export class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-    }
-  }
-
   componentDidMount = () => {
     this.initialFetch();
   }
@@ -41,8 +35,6 @@ export class App extends Component {
 
 export const mapStateToProps = (state) => ({
   projects: state.projects,
-  palettes: state.palettes,
-  currentPaletteId: state.currentPaletteId,
   isLoading: state.isLoading,
   error: state.error
 });

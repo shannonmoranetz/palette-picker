@@ -22,3 +22,18 @@ export const setCurrentPaletteId = (paletteId) => ({
   type: 'SET_CURRENT_PALETTE_ID', 
   paletteId
 });
+
+export const setCurrentProjectName = (projectName) => ({
+  type: 'SET_CURRENT_PROJECT_NAME', 
+  projectName
+});
+
+export const setRandomHexcodes = (hexcodes) => ({
+  type: 'SET_RANDOM_HEXCODES', 
+  hexcodes
+});
+
+export const toggleDisplayRandom = (shouldDisplay) => ({
+  type: 'DISPLAY_RANDOM', 
+  shouldDisplay
+});
