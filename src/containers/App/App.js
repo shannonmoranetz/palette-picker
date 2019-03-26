@@ -6,12 +6,6 @@ import Header from '../../components/Header/Header';
 import ParentSection from '../../components/ParentSection/ParentSection';
 
 export class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-    }
-  }
-
   componentDidMount = () => {
     this.initialFetch();
   }
