@@ -11,6 +11,7 @@ export const palettesReducer = (state = [], action) => {
       //   })
       // })
       // return palettes
+      console.log(action.palettes.palettes)
       return action.palettes.palettes;
     default:
       return state;
