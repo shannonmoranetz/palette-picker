@@ -20,7 +20,7 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-				{!this.props.isLoading ? (
+				{!this.props.palettes ? (
         <header className="App-header">
           <Header />
           <ParentSection />
