@@ -62,7 +62,7 @@ export class ProjectCard extends Component {
   }
 
   updateProjectName = () => {
-    if (this.props.project.length) {
+    if (this.props.project) {
       this.props.setCurrentProjectName(this.props.project.name)
     }
   }
