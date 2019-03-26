@@ -1,5 +1,5 @@
 import React from 'react';
-import PaletteControls from '../PaletteControls/PaletteControls';
+import PaletteControls from '../../containers/PaletteControls/PaletteControls';
 import ColorBox from '../../containers/ColorBox/ColorBox';
 
 export const PaletteSection = () => {

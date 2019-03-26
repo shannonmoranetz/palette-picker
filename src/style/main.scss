@@ -4,14 +4,14 @@
 @import '../../src/components/Header/Header.scss';
 @import '../../src/components/ParentSection/ParentSection.scss';
 @import '../../src/components/PaletteSection/PaletteSection.scss';
-@import '../../src/components/PaletteControls/PaletteControls.scss';
+@import '../../src/containers/PaletteControls/PaletteControls.scss';
 @import '../../src/containers/ColorBox/ColorBox.scss';
 @import '../../src/containers/ColorCard/ColorCard.scss';
-@import '../../src/components/ProjectSection/ProjectSection.scss';
+@import '../../src/containers/ProjectSection/ProjectSection.scss';
 @import '../../src/containers/ProjectControls/ProjectControls.scss';
 @import '../../src/containers/Search/Search.scss';
 @import '../../src/containers/ProjectList/ProjectList.scss';
-@import '../../src/components/ProjectCard/ProjectCard.scss';
+@import '../../src/containers/ProjectCard/ProjectCard.scss';
 
 * {
     font-family: 'Didact Gothic', sans-serif;

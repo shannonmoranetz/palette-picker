@@ -16,7 +16,7 @@ export class PaletteControls extends Component {
     if (!matchingPalette.length) {
       matchingPalette = [{ name: 'Palette' }]
     }
-    return matchingPalette[0].name;
+    return matchingPalette[0].name.toUpperCase();
   }
 
   generateRandomColors = async () => {

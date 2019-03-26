@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ProjectCard from '../../components/ProjectCard/ProjectCard';
+import ProjectCard from '../ProjectCard/ProjectCard';
 import uuid from 'uuid/v4';
 
 export class ProjectList extends Component {
