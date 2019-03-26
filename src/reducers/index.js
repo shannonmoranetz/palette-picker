@@ -7,6 +7,7 @@ import { currentPaletteIdReducer } from './currentPaletteIdReducer';
 import { currentProjectNameReducer } from './currentProjectNameReducer';
 import { randomHexcodesReducer } from './randomHexcodesReducer';
 import { shouldDisplayRandomReducer } from './shouldDisplayRandomReducer';
+import { lockedHexcodesReducer } from './lockedHexcodesReducer';
 
 const rootReducer = combineReducers({
   projects: projectsReducer,
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   currentPaletteId: currentPaletteIdReducer,
   currentProjectName: currentProjectNameReducer,
   randomHexcodes: randomHexcodesReducer,
+  lockedHexcodes: lockedHexcodesReducer,
   shouldDisplayRandom: shouldDisplayRandomReducer,
   error: errorReducer,
   isLoading: loadingReducer
