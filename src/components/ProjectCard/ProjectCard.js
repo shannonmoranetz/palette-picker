@@ -22,7 +22,7 @@ export class ProjectCard extends Component {
       const { name, color1, color2, color3, color4, color5 } = palette;
         return (
           <div key={uuid()} className="mapped-palettes">
-            <span id={this.createPaletteId(i) className="palette-name">{name}</span>
+            <span id={this.createPaletteId(i)} className="palette-name">{name}</span>
             <span className="color-minibox" id={this.createPaletteId(i)} style={{ backgroundColor: `#${color1}`}}></span>
             <span className="color-minibox" id={this.createPaletteId(i)} style={{ backgroundColor: `#${color2}`}}></span>
             <span className="color-minibox" id={this.createPaletteId(i)} style={{ backgroundColor: `#${color3}`}}></span>
