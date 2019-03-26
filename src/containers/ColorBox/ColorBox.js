@@ -37,7 +37,6 @@ export class ColorBox extends Component {
 				paletteColors = randomColors;
 			}
 		}
-		console.log(paletteColors)
 		return paletteColors;
 	};
 
