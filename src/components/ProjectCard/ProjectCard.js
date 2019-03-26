@@ -12,12 +12,6 @@ export class ProjectCard extends Component {
     }
   }
 
-  componentDidMount = () => {
-    if (this.props.palettes.length) {
-      this.findProjectPalette();
-    }
-  }
-
 	findProjectPalette = () => {
 		const  { palettes, project } = this.props;
 		const matchingPalettes = palettes.filter((palette) => {
@@ -30,28 +24,35 @@ export class ProjectCard extends Component {
       let paletteColors = [ color1, color2, color3, color4, color5 ]
       return paletteColors;
     })
-    console.log(colors)
     this.setState({colors: [...this.state.colors, ...colors] })
+    
 	}
 
   render() {
     const { project } = this.props;
     return (
       <div className="ProjectCard">
-        <p className="project-name">{project.name}</p>
-          <div className="palette-container">
-            <p className="palette-name">Palette Name</p>
-              <div className="palette-minibox">
-              {
-                this.state.colors.map((color, i) => {
-                  return <p key={i}>{color}</p>
-                })
-              }
-              </div> 
-              <button className="load-button"><FontAwesomeIcon icon={faEdit} className="load-icon"/></button>
-              <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="deelete-icon"/></button>
+        {this.props.palettes.length ? (
+          <div>
+          {this.findProjectPalette()}
+            <p className="project-name">{project.name}</p>
+              <div className="palette-container">
+                <p className="palette-name">Palette Name</p>
+                  <div className="palette-minibox">
+                  {
+                    this.state.colors.map((color, i) => {
+                      return <p key={i}>{color}</p>
+                    })
+                  }
+                  </div> 
+                  <button className="load-button"><FontAwesomeIcon icon={faEdit} className="load-icon"/></button>
+                  <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="deelete-icon"/></button>
+              </div>
+            <button className="delete-project-button">Delete Project</button>
           </div>
-        <button className="delete-project-button">Delete Project</button>
+        ) : (
+          <p>loading...</p>
+        )}
       </div>
     );
   }
