@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setRandomHexcodes, toggleDisplayRandom } from '../../actions/index';
+import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
 
 export class PaletteControls extends Component {
 
@@ -44,7 +45,7 @@ export class PaletteControls extends Component {
             <h2 className="palette-header">{this.findPaletteName()}</h2>
           </div>
         ) : (
-          <p>loading...</p>
+          <LoadingDisplay/>
         )}
       </div>
     );

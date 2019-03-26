@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ColorCard from '../../containers/ColorCard/ColorCard';
 import uuid from 'uuid/v4';
+import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
 
 export class ColorBox extends Component {
 
@@ -48,8 +49,8 @@ export class ColorBox extends Component {
 						{this.returnColorCards()}
 					</div>
 				) : (
-						<p className="loading-text">Loading...</p>
-					)}
+					<LoadingDisplay/>
+				)}
 			</div>
 		)
 	}

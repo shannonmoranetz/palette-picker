@@ -4,6 +4,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
 import { toggleDisplayRandom, setCurrentPaletteId, setCurrentProjectName } from '../../actions/index';
+import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
 
 export class ProjectCard extends Component {
 
@@ -80,7 +81,7 @@ export class ProjectCard extends Component {
             <button className="delete-project-button">Delete Project</button>
           </div>
         ) : (
-          <p>loading...</p>
+          <LoadingDisplay/>
         )}
       </div>
     );

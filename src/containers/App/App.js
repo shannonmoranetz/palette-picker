@@ -4,6 +4,7 @@ import { fetchPalettes } from '../../thunks/fetchPalettes';
 import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
 import ParentSection from '../../components/ParentSection/ParentSection';
+import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
 
 export class App extends Component {
   componentDidMount = () => {
@@ -26,7 +27,7 @@ export class App extends Component {
           <ParentSection />
         </header>
         ) : (
-          <p>Loading...</p>
+          <LoadingDisplay/>
         )}
       </div>
     );
