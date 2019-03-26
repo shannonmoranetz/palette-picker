@@ -1,7 +1,68 @@
 .ProjectCard {
     border: 1px solid purple;
+    padding: 20px;
+}
+
+.project-name {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-bottom: 10px;
 }
 
 .palette-name {
-    font-size: 20px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.mapped-palettes {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.delete-project-button {
+    margin-top: 10px;
+    height: 30px;
+    min-width: 88px;
+    padding: 3px 8px;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    border:0;
+    border-radius: 2px;
+    background: #9c27b0;
+    color:#fff;
+    outline:0;
+    &:hover {
+        background: darken(#9c27b0, 12%)  
+    }
+}
+
+.md-btn-raised {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+                0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:active {
+        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12),
+                0 5px 5px -3px rgba(0, 0, 0, 0.4);
+    }
+}
+
+.color-minibox {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.load-button,
+.delete-button {
+    font-size: 18px;
+    border: none;
+    margin-left: 3px;
+    color: grey;
 }

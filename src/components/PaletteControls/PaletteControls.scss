@@ -1,14 +1,50 @@
 .PaletteControls {
-    border-bottom: 2px solid green;
+    background-color: #e6f5f7;
+    border-bottom: 1px solid green;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5vh;
+    height: 7vh;
 }
 
 .palette-header {
     color: grey;
     font-family: 'Allerta Stencil', sans-serif;
-    font-size: 32px;
-    margin-top: 3px;
+    font-size: 25px;
+    margin-top: 23px;
+}
+
+.generate-button {
+    margin-top: 2px;
+    margin-left: 6px;
+    height: 36px;
+    min-width: 88px;
+    padding: 6px 16px;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    border:0;
+    border-radius: 2px;
+    background: #e91e63;
+    color:#fff;
+    outline:0;
+    &:hover {
+        background: darken(#e91e63, 12%)  
+    }
+}
+
+.md-btn-raised {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+                0 1px 5px 0 rgba(0, 0, 0, 0.12), 
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:active {
+        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12),
+                0 5px 5px -3px rgba(0, 0, 0, 0.4);
+    }
 }

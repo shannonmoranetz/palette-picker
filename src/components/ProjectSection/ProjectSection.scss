@@ -4,20 +4,18 @@
 }
 
 .content-container {
-    border: 2px solid blue;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%;
+    background-color: #f5f5fb;
 }
 
 .project-header {
+    background-color: #e6f5f7;
     font-family: 'Allerta Stencil', sans-serif;
     text-align: right;
     color: grey;
-    height: 5vh;
+    height: 7vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-end;
-    font-size: 32px;
+    font-size: 25px;
+    padding-right: 3px;
 }

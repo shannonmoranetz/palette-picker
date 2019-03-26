@@ -7,7 +7,7 @@ export const ProjectSection = () => {
     return (
         <div className="ProjectSection">
             <div className="subheading-container">
-                <h2 className="project-header">PROJECT 1</h2>
+                <h2 className="project-header">PROJECT</h2>
             </div>
             <div className="content-container">
                 <ProjectControls/>
