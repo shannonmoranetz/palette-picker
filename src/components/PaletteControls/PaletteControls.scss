@@ -1,9 +1,12 @@
 .PaletteControls {
     border-bottom: 2px solid green;
+    height: 5vh;
+}
+
+.palette-controls-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5vh;
 }
 
 .palette-header {

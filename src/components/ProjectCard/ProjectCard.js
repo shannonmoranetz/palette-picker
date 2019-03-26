@@ -4,8 +4,10 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
+import { toggleDisplayRandom, setCurrentPaletteId, setCurrentProjectName } from '../../actions/index';
 
 export class ProjectCard extends Component {
+
 	findProjectPalette = () => {
     const  { palettes, project } = this.props;
 		const matchingPalettes = palettes.filter((palette) => {
@@ -16,19 +18,53 @@ export class ProjectCard extends Component {
 
   returnElements = () => {
     let matchingPalettes = this.findProjectPalette();
-    return matchingPalettes.map((palette) => {
+    return matchingPalettes.map((palette, i) => {
       const { name, color1, color2, color3, color4, color5 } = palette;
         return (
           <div key={uuid()} className="mapped-palettes">
-            <p className="palette-name">{name}</p>
-            <p className="color-minibox">color1: {color1}</p>
-            <p className="color-minibox">color2: {color2}</p>
-            <p className="color-minibox">color3: {color3}</p>
-            <p className="color-minibox">color4: {color4}</p>
-            <p className="color-minibox">color5: {color5}</p>
+            <p className="palette-name" id={this.createPaletteId(i)} >{name}</p>
+            <div className="color-minibox" id={this.createPaletteId(i)} style={{backgroundColor: `#${color1}`}}> </div>
+            <div className="color-minibox" id={this.createPaletteId(i)} style={{backgroundColor: `#${color2}`}}> </div>
+            <div className="color-minibox" id={this.createPaletteId(i)} style={{backgroundColor: `#${color3}`}}> </div>
+            <div className="color-minibox" id={this.createPaletteId(i)} style={{backgroundColor: `#${color4}`}}> </div>
+            <div className="color-minibox" id={this.createPaletteId(i)} style={{backgroundColor: `#${color5}`}}> </div>
           </div>
         )
       })
+  }
+
+  createPaletteId = (i) => {
+    let matchingPalettes = this.findProjectPalette();
+    let nameId;
+    if (matchingPalettes.length) {
+      let firstPalette = matchingPalettes[i];
+      nameId = firstPalette.name
+    } else {
+      nameId = null
+    }
+    return nameId
+  }
+
+  updateSelectedPalette = async (e) => {
+    const  { palettes, currentPaletteId } = this.props;
+    let paletteName = e.target.id;
+    let matchingPalettes = await this.findProjectPalette();
+    await palettes.forEach((palette) => {
+      if (palette.name.includes(paletteName)) {
+        this.props.setCurrentPaletteId(palette.id)
+      }
+    })
+    const selectedPalette = await matchingPalettes.find((palette) => {
+      return palette.id === currentPaletteId
+    })
+    this.props.toggleDisplayRandom(false);
+    return selectedPalette;
+  }
+
+  updateProjectName = () => {
+    if (this.props.project) {
+      this.props.setCurrentProjectName(this.props.project.name)
+    }
   }
 
   render() {
@@ -36,11 +72,10 @@ export class ProjectCard extends Component {
     return (
       <div className="ProjectCard">
         {this.props.palettes.length ? (
-          <div>
-            <p className="project-name">{project.name}</p>
-              <div className="palette-container">
+          <div onClick={() => this.updateProjectName()}>
+            <p className="project-name" onClick={(e) => this.updateSelectedPalette(e)}>{project.name}</p>
+              <div className="palette-container" onClick={(e) => this.updateSelectedPalette(e)}>
                   { this.returnElements() }
-                  <button className="load-button"><FontAwesomeIcon icon={faEdit} className="load-icon"/></button>
                   <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="delete-icon"/></button>
               </div>
             <button className="delete-project-button">Delete Project</button>
@@ -54,7 +89,14 @@ export class ProjectCard extends Component {
 }
 
 export const mapStateToProps = (state) => ({
-  palettes: state.palettes
+  palettes: state.palettes,
+  currentPaletteId: state.currentPaletteId
 });
 
-export default connect(mapStateToProps)(ProjectCard);
+export const mapDispatchToProps = (dispatch) => ({
+  toggleDisplayRandom: (shouldDisplay) => dispatch(toggleDisplayRandom(shouldDisplay)),
+  setCurrentPaletteId: (paletteId) => dispatch(setCurrentPaletteId(paletteId)),
+  setCurrentProjectName: (projectName) => dispatch(setCurrentProjectName(projectName)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectCard);
