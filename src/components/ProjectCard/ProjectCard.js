@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
@@ -38,8 +37,8 @@ export class ProjectCard extends Component {
     let matchingPalettes = this.findProjectPalette();
     let nameId;
     if (matchingPalettes.length) {
-      let firstPalette = matchingPalettes[i];
-      nameId = firstPalette.name
+      let clickedPalette = matchingPalettes[i];
+      nameId = clickedPalette.name
     } else {
       nameId = null
     }
