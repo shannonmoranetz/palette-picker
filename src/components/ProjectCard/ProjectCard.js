@@ -77,7 +77,6 @@ export class ProjectCard extends Component {
             <p className="project-name" onClick={(e) => this.updateSelectedPalette(e)}>{project.name.toUpperCase()}</p>
               <div className="palette-container" onClick={(e) => this.updateSelectedPalette(e)}>
                   { this.returnElements() }
-                  <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="delete-icon"/></button>
               </div>
             <button className="delete-project-button">Delete Project</button>
           </div>
