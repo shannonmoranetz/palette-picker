@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { fetchData } from '../../utils/api.js';
 import { fetchProjects } from '../../thunks/fetchProjects';
+import { fetchPalettes } from '../../thunks/fetchPalettes';
 import { connect } from 'react-redux';
+import uuid from 'uuid/v4';
 
 export class ProjectControls extends Component {
   constructor() {
     super();
     this.state = {
       projectName: '',
-      paletteName: ''
+      paletteName: '',
+      selectedSaveLocation: ''
     }
   }
 
@@ -25,7 +28,6 @@ export class ProjectControls extends Component {
   createProject = async () => {
     const { projectName } = this.state;
     let isDuplicate = this.checkDuplicateName(projectName);
-    console.log(isDuplicate);
     if (!projectName.length) {
       alert('You must provide a name to submit a new project.');
     } else if (isDuplicate) {
@@ -49,6 +51,36 @@ export class ProjectControls extends Component {
     return isDuplicate;
   }
 
+  handleChangePalette = (e) => {
+    let paletteName = e.target.value;
+    this.setState({ paletteName })
+  }
+
+  handleSubmitPalette = (e) => {
+    e.preventDefault();
+    this.createPalette();
+  }
+
+  createPalette = async () => {
+    const { paletteName } = this.state;
+    let isDuplicate = this.checkDuplicateName(paletteName);
+    if (!paletteName.length) {
+      alert('You must provide a name to submit a new palette.');
+    } else if (isDuplicate) {
+      alert('Duplicate palette names are not permitted.');
+    } else {
+      const paletteData = { name: paletteName };
+      await fetchData('/palettes', 'POST', paletteData);
+      this.props.fetchPalettes();
+    }
+  }
+
+  populateDropdown = () => { 
+    return this.props.projects.map((project) => {
+      return <option value={project.name} key={uuid()}>{project.name}</option>
+    })
+  }
+
   render() {
     return (
       <div className="ProjectControls">
@@ -62,6 +94,7 @@ export class ProjectControls extends Component {
           <input type="text" name="save-palette" className="save-palette-input"/>
           <select>
             <option value="default">Save to:</option>
+            { this.populateDropdown() }
           </select>
           <button type="submit" className="save-palette-button">Save Palette</button>
         </form>
@@ -71,11 +104,13 @@ export class ProjectControls extends Component {
 }
 
 export const mapStateToProps = (state) => ({
-  projects: state.projects
+  projects: state.projects,
+  currentProjectName: state.currentProjectName
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  fetchProjects: () => dispatch(fetchProjects())
+  fetchProjects: () => dispatch(fetchProjects()),
+  fetchPalettes: (id) => dispatch(fetchPalettes(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectControls);
