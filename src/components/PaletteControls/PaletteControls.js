@@ -4,12 +4,16 @@ import { setRandomHexcodes, toggleDisplayRandom } from '../../actions/index';
 
 export class PaletteControls extends Component {
 
+  // componentDidMount = () => [
+  //   this.generateRandomColors()
+  // ]
+
   findPaletteName = () => {
     const  { palettes, currentPaletteId } = this.props;
     const matchingPalette = palettes.find((palette) => {
-      return palette.id === currentPaletteId
+      return palette.id === currentPaletteId || { name: 'Palette' };
     })
-    return matchingPalette.name;
+    return matchingPalette.name 
   }
 
   generateRandomColors = async () => {

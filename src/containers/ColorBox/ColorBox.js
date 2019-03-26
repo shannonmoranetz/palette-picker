@@ -30,14 +30,15 @@ export class ColorBox extends Component {
 			let matchingPalette = palettes.filter((palette) => {
 				return palette.id === currentPaletteId
 			});
-			const { color1, color2, color3, color4, color5 } = matchingPalette[0];
-			paletteColors = [ color1, color2, color3, color4, color5 ];
+			if (matchingPalette.length) {
+				const { color1, color2, color3, color4, color5 } = matchingPalette[0];
+				paletteColors = [ color1, color2, color3, color4, color5 ];
+			} else {
+				paletteColors = randomColors;
+			}
 		}
-		if (paletteColors.length) {
-			return paletteColors;
-		} else {
-			return randomColors
-		}
+		console.log(paletteColors)
+		return paletteColors;
 	};
 
 	render() {
