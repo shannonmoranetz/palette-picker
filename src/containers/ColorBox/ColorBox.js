@@ -7,7 +7,7 @@ export class ColorBox extends Component {
 
 	returnColorCards = () => {
 		const paletteColors = this.findCurrentPaletteColors();
-		const colorCards = paletteColors.map((color) => {
+		let colorCards = paletteColors.map((color) => {
 			return <ColorCard key={uuid()} color={color} />
 		})
 		return colorCards;
@@ -27,13 +27,17 @@ export class ColorBox extends Component {
 			const { color1, color2, color3, color4, color5 } = randomColors;
 			paletteColors = [ color1, color2, color3, color4, color5 ];
 		} else {
-			let matchingPalette = palettes.find((palette) => {
-				return palette.id === currentPaletteId || randomColors
+			let matchingPalette = palettes.filter((palette) => {
+				return palette.id === currentPaletteId
 			});
-			const { color1, color2, color3, color4, color5 } = matchingPalette;
+			const { color1, color2, color3, color4, color5 } = matchingPalette[0];
 			paletteColors = [ color1, color2, color3, color4, color5 ];
 		}
-		return paletteColors;
+		if (paletteColors.length) {
+			return paletteColors;
+		} else {
+			return randomColors
+		}
 	};
 
 	render() {

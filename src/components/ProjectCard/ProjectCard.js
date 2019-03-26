@@ -4,13 +4,9 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
-import { toggleDisplayRandom, setCurrentPaletteId } from '../../actions/index';
+import { toggleDisplayRandom, setCurrentPaletteId, setCurrentProjectName } from '../../actions/index';
 
 export class ProjectCard extends Component {
-
-  componentDidUpdate = () => {
-    this.returnElements()
-  }
 
 	findProjectPalette = () => {
     const  { palettes, project } = this.props;
@@ -61,9 +57,14 @@ export class ProjectCard extends Component {
     const selectedPalette = await matchingPalettes.find((palette) => {
       return palette.id === currentPaletteId
     })
-    console.log(selectedPalette)
     this.props.toggleDisplayRandom(false);
     return selectedPalette;
+  }
+
+  updateProjectName = () => {
+    if (this.props.project) {
+      this.props.setCurrentProjectName(this.props.project.name)
+    }
   }
 
   render() {
@@ -71,11 +72,10 @@ export class ProjectCard extends Component {
     return (
       <div className="ProjectCard">
         {this.props.palettes.length ? (
-          <div>
+          <div onClick={() => this.updateProjectName()}>
             <p className="project-name" onClick={(e) => this.updateSelectedPalette(e)}>{project.name}</p>
               <div className="palette-container" onClick={(e) => this.updateSelectedPalette(e)}>
                   { this.returnElements() }
-                  <button className="load-button"><FontAwesomeIcon icon={faEdit} className="load-icon"/></button>
                   <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="delete-icon"/></button>
               </div>
             <button className="delete-project-button">Delete Project</button>
@@ -95,8 +95,8 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = (dispatch) => ({
   toggleDisplayRandom: (shouldDisplay) => dispatch(toggleDisplayRandom(shouldDisplay)),
-  setCurrentPaletteId: (shouldDisplay) => dispatch(setCurrentPaletteId(shouldDisplay))
-  
+  setCurrentPaletteId: (paletteId) => dispatch(setCurrentPaletteId(paletteId)),
+  setCurrentProjectName: (projectName) => dispatch(setCurrentProjectName(projectName)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectCard);

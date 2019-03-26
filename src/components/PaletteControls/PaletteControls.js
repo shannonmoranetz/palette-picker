@@ -7,7 +7,7 @@ export class PaletteControls extends Component {
   findPaletteName = () => {
     const  { palettes, currentPaletteId } = this.props;
     const matchingPalette = palettes.find((palette) => {
-      return palette.id === currentPaletteId || { name: 'Palette' }
+      return palette.id === currentPaletteId
     })
     return matchingPalette.name;
   }

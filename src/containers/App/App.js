@@ -35,9 +35,6 @@ export class App extends Component {
 
 export const mapStateToProps = (state) => ({
   projects: state.projects,
-  palettes: state.palettes,
-  currentPaletteId: state.currentPaletteId,
-  currentProjectName: state.currentProjectName,
   isLoading: state.isLoading,
   error: state.error
 });
