@@ -3,13 +3,28 @@ import { connect } from 'react-redux';
 
 export class PaletteControls extends Component {
 
-  findProjectPalette = () => {
+  findPaletteName = () => {
     const  { palettes, currentPaletteId } = this.props;
-    console.log(palettes, currentPaletteId)
     const matchingPalette = palettes.find((palette) => {
-      return palette.id === currentPaletteId
+      return palette.id === currentPaletteId || { name: 'Palette' }
     })
     return matchingPalette.name;
+  }
+
+  generateRandomColors = () => {
+    let possibleHexValues = "0123456789ABCDEF";
+    let newColors = [];
+    for (let i = 0; i < 5; i++) {
+      let hexStringArray = [];
+      for (let j = 0; j < 6; j++) {
+        let generatedHexcode = possibleHexValues[(Math.floor(Math.random() * 16))]; 
+        hexStringArray.push(generatedHexcode);
+      }
+      let hexcode = hexStringArray.join('')
+      newColors.push(hexcode)
+    }
+    console.log(newColors)
+    return newColors;
   }
 
   render() {
@@ -17,8 +32,8 @@ export class PaletteControls extends Component {
       <div className="PaletteControls">
         {this.props.palettes.length ? (
           <div className="palette-controls-container">
-            <button className="generate-button">Generate New Palette!</button>
-            <h2 className="palette-header">{this.findProjectPalette()}</h2>
+            <button className="generate-button" onClick={this.generateRandomColors}>Generate New Palette!</button>
+            <h2 className="palette-header">{this.findPaletteName()}</h2>
           </div>
         ) : (
           <p>loading...</p>
