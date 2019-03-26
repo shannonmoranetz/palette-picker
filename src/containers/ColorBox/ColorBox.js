@@ -4,7 +4,6 @@ import ColorCard from '../../containers/ColorCard/ColorCard';
 import uuid from 'uuid/v4';
 
 export class ColorBox extends Component {
-
 	returnColorCards = () => {
 		const paletteColors = this.findCurrentPaletteColors();
 		const colorCards = paletteColors.map((color) => {
@@ -16,15 +15,19 @@ export class ColorBox extends Component {
 	findCurrentPaletteColors = () => {
 		const  { palettes, currentPaletteId } = this.props;
 		let matchingPalette = palettes.find((palette) => {
-			console.log(palette)
-			// debugger;
-			return palette.id === currentPaletteId
-		})
-		console.log('matching palette: ', matchingPalette)
+			return palette.id === currentPaletteId || 
+			{ 
+				color1: 'default', 
+				color2: 'default', 
+				color3: 'default', 
+				color4: 'default', 
+				color5: 'default' 
+			}
+		});
 		const { color1, color2, color3, color4, color5 } = matchingPalette;
-		let paletteColors = [ color1, color2, color3, color4, color5 ]
+		let paletteColors = [ color1, color2, color3, color4, color5 ];
 		return paletteColors;
-	}
+	};
 
 	render() {
 		return (
