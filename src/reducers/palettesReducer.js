@@ -1,7 +1,11 @@
 export const palettesReducer = (state = [], action) => {
   switch (action.type) {
     case 'SET_PALETTES':
-      return [...state, ...action.palettes.palettes];
+      let allPalettes = [...state, ...action.palettes.palettes];
+      let sortedPalettes = allPalettes.sort((a, b) => {
+        return a.id - b.id
+      })
+      return sortedPalettes;
     default:
       return state;
   }

@@ -6,18 +6,33 @@ import { connect } from 'react-redux';
 import { fetchPalettes } from '../../thunks/fetchPalettes';
 
 export class ProjectCard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      colors: []
+    }
+  }
+
   componentDidMount = () => {
-    // this.findProjectPalette(this.props.project)
+    if (this.props.palettes.length) {
+      this.findProjectPalette();
+    }
   }
 
 	findProjectPalette = () => {
-		// const  { palettes, currentPaletteId } = this.props;
-		// const matchingPalette = palettes.find((palette) => {
-		// 	return palette.id === currentPaletteId
-		// })
-		// const { color1, color2, color3, color4, color5 } = matchingPalette;
-		// let paletteColors = [ color1, color2, color3, color4, color5 ]
-		// return paletteColors;
+		const  { palettes, project } = this.props;
+		const matchingPalettes = palettes.filter((palette) => {
+      console.log('palette element: ', palette, 'project prop: ',project)
+      console.log('project id: ', project.id)
+			return palette.project_id === project.id
+    })
+    let colors = matchingPalettes.map((palette) => {
+      const { color1, color2, color3, color4, color5 } = palette;
+      let paletteColors = [ color1, color2, color3, color4, color5 ]
+      return paletteColors;
+    })
+    console.log(colors)
+    this.setState({colors: [...this.state.colors, ...colors] })
 	}
 
   render() {
@@ -27,7 +42,13 @@ export class ProjectCard extends Component {
         <p className="project-name">{project.name}</p>
           <div className="palette-container">
             <p className="palette-name">Palette Name</p>
-              <div className="palette-minibox">colors</div> 
+              <div className="palette-minibox">
+              {
+                this.state.colors.map((color, i) => {
+                  return <p key={i}>{color}</p>
+                })
+              }
+              </div> 
               <button className="load-button"><FontAwesomeIcon icon={faEdit} className="load-icon"/></button>
               <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="deelete-icon"/></button>
           </div>

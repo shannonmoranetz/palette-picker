@@ -15,9 +15,12 @@ export class ColorBox extends Component {
 
 	findCurrentPaletteColors = () => {
 		const  { palettes, currentPaletteId } = this.props;
-		const matchingPalette = palettes.find((palette) => {
+		let matchingPalette = palettes.find((palette) => {
+			console.log(palette)
+			// debugger;
 			return palette.id === currentPaletteId
 		})
+		console.log('matching palette: ', matchingPalette)
 		const { color1, color2, color3, color4, color5 } = matchingPalette;
 		let paletteColors = [ color1, color2, color3, color4, color5 ]
 		return paletteColors;
