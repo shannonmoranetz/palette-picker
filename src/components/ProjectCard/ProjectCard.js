@@ -3,55 +3,52 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
+import uuid from 'uuid/v4';
 
 export class ProjectCard extends Component {
-  constructor() {
-    super();
-    this.state = {
-      colors: []
-    }
-  }
-
-  componentDidMount = () => {
-    if (this.props.palettes.length) {
-      this.findProjectPalette();
-    }
-  }
 
 	findProjectPalette = () => {
-		const  { palettes, project } = this.props;
+    const  { palettes, project } = this.props;
 		const matchingPalettes = palettes.filter((palette) => {
-      console.log('palette element: ', palette, 'project prop: ',project)
-      console.log('project id: ', project.id)
 			return palette.project_id === project.id
     })
-    let colors = matchingPalettes.map((palette) => {
-      const { color1, color2, color3, color4, color5 } = palette;
-      let paletteColors = [ color1, color2, color3, color4, color5 ]
-      return paletteColors;
-    })
-    console.log(colors)
-    this.setState({colors: [...this.state.colors, ...colors] })
-	}
+    return matchingPalettes;
+  }
+
+  returnElements = () => {
+    let matchingPalettes = this.findProjectPalette();
+    return matchingPalettes.map((palette) => {
+      const { name, color1, color2, color3, color4, color5 } = palette;
+        return (
+          <div key={uuid()} className="mapped-palettes">
+            <p className="palette-name">{name}</p>
+            <p className="color-minibox">color1: {color1}</p>
+            <p className="color-minibox">color2: {color2}</p>
+            <p className="color-minibox">color3: {color3}</p>
+            <p className="color-minibox">color4: {color4}</p>
+            <p className="color-minibox">color5: {color5}</p>
+          </div>
+        )
+      })
+  }
 
   render() {
     const { project } = this.props;
     return (
       <div className="ProjectCard">
-        <p className="project-name">{project.name}</p>
-          <div className="palette-container">
-            <p className="palette-name">Palette Name</p>
-              <div className="palette-minibox">
-              {
-                this.state.colors.map((color, i) => {
-                  return <p key={i}>{color}</p>
-                })
-              }
-              </div> 
-              <button className="load-button"><FontAwesomeIcon icon={faEdit} className="load-icon"/></button>
-              <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="deelete-icon"/></button>
+        {this.props.palettes.length ? (
+          <div>
+            <p className="project-name">{project.name}</p>
+              <div className="palette-container">
+                  { this.returnElements() }
+                  <button className="load-button"><FontAwesomeIcon icon={faEdit} className="load-icon"/></button>
+                  <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="delete-icon"/></button>
+              </div>
+            <button className="delete-project-button">Delete Project</button>
           </div>
-        <button className="delete-project-button">Delete Project</button>
+        ) : (
+          <p>loading...</p>
+        )}
       </div>
     );
   }

@@ -4,10 +4,7 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import uuid from 'uuid/v4';
 
 export class ProjectList extends Component {
-
   
-
-
   render() {
     const { projects } = this.props;
     return (
