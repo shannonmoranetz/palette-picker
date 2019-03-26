@@ -22,3 +22,8 @@ export const setCurrentPaletteId = (paletteId) => ({
   type: 'SET_CURRENT_PALETTE_ID', 
   paletteId
 });
+
+export const setCurrentProjectName = (projectName) => ({
+  type: 'SET_CURRENT_PROJECT_NAME', 
+  projectName
+});
