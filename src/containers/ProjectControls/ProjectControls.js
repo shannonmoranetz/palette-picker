@@ -24,13 +24,29 @@ export class ProjectControls extends Component {
 
   createProject = async () => {
     const { projectName } = this.state;
+    let isDuplicate = this.checkDuplicateName(projectName);
+    console.log(isDuplicate);
     if (!projectName.length) {
       alert('You must provide a name to submit a new project.');
+    } else if (isDuplicate) {
+      alert('Duplicate project names are not permitted.');
     } else {
       const projectData = { name: projectName };
       await fetchData('/projects', 'POST', projectData);
       this.props.fetchProjects();
     }
+  }
+
+  checkDuplicateName = (projectName) => {
+    let isDuplicate;
+    this.props.projects.forEach(project => {
+      if(project.name === projectName) {
+        isDuplicate = true;
+      } else {
+        isDuplicate = false;
+      }
+    })
+    return isDuplicate;
   }
 
   render() {
@@ -54,9 +70,13 @@ export class ProjectControls extends Component {
   }
 }
 
+export const mapStateToProps = (state) => ({
+  projects: state.projects
+});
+
 export const mapDispatchToProps = (dispatch) => ({
   fetchProjects: () => dispatch(fetchProjects())
 });
 
-export default connect(null, mapDispatchToProps)(ProjectControls);
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectControls);
 
