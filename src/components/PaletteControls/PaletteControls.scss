@@ -1,10 +1,14 @@
 .PaletteControls {
-    border: 2px solid green;
+    border-bottom: 2px solid green;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 5vh;
 }
 
 .palette-header {
     color: grey;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 32px;
+    margin-top: 3px;
 }

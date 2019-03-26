@@ -7,31 +7,20 @@ import { connect } from 'react-redux';
 export class ProjectCard extends Component {
   constructor() {
     super();
-    this.state = {
-      colors: []
-    }
   }
 
-  componentDidMount = () => {
-    if (this.props.palettes.length) {
-      this.findProjectPalette();
-    }
-  }
+  // componentDidMount = () => {
+  //   if (this.props.palettes.length) {
+  //     this.findProjectPalette();
+  //   }
+  // }
 
 	findProjectPalette = () => {
 		const  { palettes, project } = this.props;
 		const matchingPalettes = palettes.filter((palette) => {
-      console.log('palette element: ', palette, 'project prop: ',project)
-      console.log('project id: ', project.id)
 			return palette.project_id === project.id
     })
-    let colors = matchingPalettes.map((palette) => {
-      const { color1, color2, color3, color4, color5 } = palette;
-      let paletteColors = [ color1, color2, color3, color4, color5 ]
-      return paletteColors;
-    })
-    console.log(colors)
-    this.setState({colors: [...this.state.colors, ...colors] })
+    return matchingPalettes
 	}
 
   render() {
@@ -40,14 +29,22 @@ export class ProjectCard extends Component {
       <div className="ProjectCard">
         <p className="project-name">{project.name}</p>
           <div className="palette-container">
-            <p className="palette-name">Palette Name</p>
-              <div className="palette-minibox">
-              {
-                this.state.colors.map((color, i) => {
-                  return <p key={i}>{color}</p>
-                })
-              }
-              </div> 
+            <div className="palette-minibox">
+            {
+              this.findProjectPalette().map((palette) => {
+                return (
+                  <div>
+                    <p>{palette.name}</p>
+                    <span>{palette.color1}</span>
+                    <span>{palette.color2}</span>
+                    <span>{palette.color3}</span>
+                    <span>{palette.color4}</span>
+                    <span>{palette.color5}</span>
+                  </div>
+                )
+              })
+            }
+            </div> 
               <button className="load-button"><FontAwesomeIcon icon={faEdit} className="load-icon"/></button>
               <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="deelete-icon"/></button>
           </div>
