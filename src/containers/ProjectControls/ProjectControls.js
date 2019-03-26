@@ -7,16 +7,17 @@ export class ProjectControls extends Component {
   constructor() {
     super();
     this.state = {
-      projectName: ''
+      projectName: '',
+      paletteName: ''
     }
   }
 
-  handleChange = (e) => {
+  handleChangeProject = (e) => {
     let projectName = e.target.value;
     this.setState({ projectName })
   }
 
-  handleSubmit = (e) => {
+  handleSubmitProject = (e) => {
     e.preventDefault();
     this.createProject();
   }
@@ -35,9 +36,9 @@ export class ProjectControls extends Component {
   render() {
     return (
       <div className="ProjectControls">
-        <form className="create-project-form" onSubmit={(e) => this.handleSubmit(e)}>
+        <form className="create-project-form" onSubmit={(e) => this.handleSubmitProject(e)}>
           <label htmlFor="create-project">Create your project:</label><br/>
-          <input onChange={(e) => this.handleChange(e)} type="text" name="create-project" className="create-project-input"/>
+          <input onChange={(e) => this.handleChangeProject(e)} type="text" name="create-project" className="create-project-input"/>
           <button type="submit" className="save-project-button">Save Project</button>
         </form>
         <form className="save-palette-form">
