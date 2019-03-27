@@ -7,7 +7,7 @@ describe('ColorCard', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ColorCard/>
+      <ColorCard color={'ffffff'}/>
       )
     });
     

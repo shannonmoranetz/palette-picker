@@ -5,7 +5,7 @@ exports[`ColorCard ColorCard component should properly render the component elem
   className="ColorCard"
   style={
     Object {
-      "backgroundColor": "#undefined",
+      "backgroundColor": "#ffffff",
     }
   }
 >
@@ -44,6 +44,7 @@ exports[`ColorCard ColorCard component should properly render the component elem
     className="hexcode"
   >
     #
+    ffffff
   </p>
 </div>
 `;
