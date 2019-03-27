@@ -11,7 +11,7 @@ export class ProjectControls extends Component {
     this.state = {
       projectName: 'Warm Colors Project',
       paletteName: '',
-      selectedSaveLocation: 'Save to:'
+      selectedSaveLocation: 'Warm colors project'
     }
   }
 
@@ -63,29 +63,35 @@ export class ProjectControls extends Component {
 
   createPalette = async () => {
     const { paletteName } = this.state;
+    const { hexcodes } = this.props;
     let isDuplicate = this.checkDuplicateName(paletteName);
     if (!paletteName.length) {
       alert('You must provide a name to submit a new palette.');
     } else if (isDuplicate) {
       alert('Duplicate palette names are not permitted.');
     } else {
-      const cleanedData = await this.cleanMatchingData();
-      // const paletteData = 
-      // await fetchData(`/projects/${projectId}/palettes`, 'POST', paletteData);
+      let matchingProjectId = this.findMatchingProject();
+      const paletteData = { 
+        project_id: matchingProjectId, 
+        name: paletteName,
+        color1: hexcodes[0],
+        color2: hexcodes[1],
+        color3: hexcodes[2],
+        color4: hexcodes[3],
+        color5: hexcodes[4]
+      }
+      await fetchData(`/palettes`, 'POST', paletteData);
       // this.props.fetchPalettes();
     }
   }
 
-  cleanMatchingData = () => {
-    const matchedProject = this.props.projects.filter((project) => {
-      return project.name.toLowerCase() === this.state.projectName.toLowerCase();
-    });
-    
-    //COLOR1:
-    // console.log(this.props.randomHexcodes[0])
-
-    // const cleanedData = { project_id: matchedProject[0].id, name: paletteName, color1: , color2:  color3:, color4:, color5: };
+  findMatchingProject = () => {
+    let matchedProject = this.props.projects.find((project) => {
+      return project.name.toLowerCase() === this.state.selectedSaveLocation.toLowerCase();
+    })
+    return matchedProject.id
   }
+    
 
   populateDropdown = () => { 
     return (
@@ -123,7 +129,7 @@ export class ProjectControls extends Component {
 export const mapStateToProps = (state) => ({
   projects: state.projects,
   palettes: state.palettes,
-  randomHexcodes: state.randomHexcodes
+  hexcodes: state.hexcodes
 });
 
 export const mapDispatchToProps = (dispatch) => ({

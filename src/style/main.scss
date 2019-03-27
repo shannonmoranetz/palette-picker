@@ -2,7 +2,6 @@
 @import './variables';
 @import '../../src/containers/App/App.scss';
 @import '../../src/components/Header/Header.scss';
-@import '../../src/components/ParentSection/ParentSection.scss';
 @import '../../src/components/PaletteSection/PaletteSection.scss';
 @import '../../src/containers/PaletteControls/PaletteControls.scss';
 @import '../../src/containers/ColorBox/ColorBox.scss';
@@ -12,6 +11,7 @@
 @import '../../src/containers/Search/Search.scss';
 @import '../../src/containers/ProjectList/ProjectList.scss';
 @import '../../src/containers/ProjectCard/ProjectCard.scss';
+@import '../../src/containers/PaletteCard/PaletteCard.scss';
 
 * {
     font-family: 'Didact Gothic', sans-serif;

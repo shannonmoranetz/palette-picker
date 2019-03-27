@@ -24,7 +24,7 @@ export class PaletteCard extends Component {
     })
   }
   
-  updateHexcodes = async (id) => {
+  updateHexcodes = (id) => {
     const hexcodes = this.props.palettes.find((palette) => {
       return palette.id === id
     })
@@ -34,9 +34,9 @@ export class PaletteCard extends Component {
 
   render() {
     return (
-        <div className="PaletteCard">
-          { this.returnPalettes() }
-        </div>
+      <div className="PaletteCard">
+        { this.returnPalettes() }
+      </div>
     )
   }
 }
@@ -46,7 +46,7 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  setHexcodes: (hexcodes) => dispatch(setHexcodes(hexcodes))
+  setHexcodes: (hexcodes) => dispatch(setHexcodes(hexcodes)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PaletteCard);

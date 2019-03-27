@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PaletteCard from '../../components/PaletteCard/PaletteCard';
+import PaletteCard from '../../containers/PaletteCard/PaletteCard';
+import { setLoadedProject } from '../../actions';
 
 export class ProjectCard extends Component {
 
@@ -16,7 +17,7 @@ export class ProjectCard extends Component {
     const { project } = this.props;
     return (
       <div className="ProjectCard">
-          <div >
+          <div onClick={() => this.props.setLoadedProject(this.props.project.name)}>
             <p className="project-name">{project.name.toUpperCase()}</p>
               <div className="palette-container">
                 <PaletteCard projectPalettes={this.findProjectPalettes()}/>
@@ -32,4 +33,8 @@ export const mapStateToProps = (state) => ({
   palettes: state.palettes
 });
 
-export default connect(mapStateToProps)(ProjectCard);
+export const mapDispatchToProps = (dispatch) => ({
+  setLoadedProject: (loadedProject) => dispatch(setLoadedProject(loadedProject))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectCard);

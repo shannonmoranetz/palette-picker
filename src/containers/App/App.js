@@ -4,7 +4,8 @@ import { fetchPalettes } from '../../thunks/fetchPalettes';
 import { setLoading } from '../../actions/index';
 import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
-import ParentSection from '../../components/ParentSection/ParentSection';
+import PaletteSection from '../../components/PaletteSection/PaletteSection';
+import ProjectSection from '../../containers/ProjectSection/ProjectSection';
 import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
 
 export class App extends Component {
@@ -24,10 +25,13 @@ export class App extends Component {
     return (
       <div className="App">
 				{!this.props.isLoading ? (
-        <header className="App-header">
-          <Header />
-          <ParentSection />
-        </header>
+          <div>
+            <Header />
+            <div className="app-content">
+              <PaletteSection/>
+              <ProjectSection/>
+            </div>
+          </div>
         ) : (
           <LoadingDisplay/>
         )}
@@ -38,8 +42,7 @@ export class App extends Component {
 
 export const mapStateToProps = (state) => ({
   projects: state.projects,
-  isLoading: state.isLoading,
-  error: state.error
+  isLoading: state.isLoading
 });
 
 export const mapDispatchToProps = (dispatch) => ({
