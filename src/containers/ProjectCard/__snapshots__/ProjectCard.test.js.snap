@@ -1,3 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProjectCard ProjectCard Component should properly render the component elements 1`] = `undefined`;
+exports[`ProjectCard ProjectCard Component should properly render the component elements 1`] = `
+<div
+  className="ProjectCard"
+>
+  <div
+    onClick={[Function]}
+  >
+    <p
+      className="project-name"
+    >
+      PROJECT1
+    </p>
+    <div
+      className="palette-container"
+    >
+      <Connect(PaletteCard)
+        projectPalettes={
+          Array [
+            Object {
+              "color1": "FFFF82",
+              "color2": "DDDCF7",
+              "color3": "B5D99C",
+              "color4": "FFAF66",
+              "color5": "E65F5C",
+              "created_at": "2019-03-26T05:17:02.735Z",
+              "id": 1,
+              "name": "Summer colors",
+              "project_id": 1,
+              "updated_at": "2019-03-26T05:17:02.735Z",
+            },
+            Object {
+              "color1": "F25469",
+              "color2": "BD2D87",
+              "color3": "D664BE",
+              "color4": "DF99F0",
+              "color5": "B191FF",
+              "created_at": "2019-03-26T05:17:02.736Z",
+              "id": 2,
+              "name": "Spring colors",
+              "project_id": 1,
+              "updated_at": "2019-03-26T05:17:02.736Z",
+            },
+          ]
+        }
+      />
+    </div>
+    <button
+      className="delete-project-button"
+    >
+      Delete Project
+    </button>
+  </div>
+</div>
+`;

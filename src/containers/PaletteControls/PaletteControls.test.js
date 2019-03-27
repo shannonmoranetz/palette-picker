@@ -23,7 +23,7 @@ describe('PaletteControls', () => {
     });
 
     describe('mapStateToProps', () => {
-      it.skip('should return an object with palettesand hexcodes as keys', () => {
+      it.skip('should return an object with palettes and hexcodes as keys', () => {
         const mockState = {
           projects: [],
           isLoading: false,

@@ -15,7 +15,7 @@ describe('ProjectCard', () => {
     });
 
   describe('ProjectCard Component', () => {
-    it.skip('should properly render the component elements', () => {
+    it('should properly render the component elements', () => {
       expect(wrapper).toMatchSnapshot();
     });
 

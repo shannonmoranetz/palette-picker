@@ -1,3 +1,348 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PaletteCard should properly render the component elements 1`] = `undefined`;
+exports[`PaletteCard PaletteCard component should properly render the component elements 1`] = `
+<div
+  className="PaletteCard"
+>
+  <div
+    className="mapped-palettes"
+    key="ae1fbb67-6490-47eb-b98a-b7fa8958b1f5"
+    onClick={[Function]}
+  >
+    <span
+      className="palette-name"
+    >
+      Summer colors
+    </span>
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#FFFF82",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#DDDCF7",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#B5D99C",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#FFAF66",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#E65F5C",
+        }
+      }
+    />
+    <button
+      className="delete-button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className="delete-icon"
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f1f8",
+              "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z",
+            ],
+            "iconName": "trash",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </button>
+  </div>
+  <div
+    className="mapped-palettes"
+    key="cd842e7a-54ee-47fa-82bd-55f6a8a71437"
+    onClick={[Function]}
+  >
+    <span
+      className="palette-name"
+    >
+      Spring colors
+    </span>
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#F25469",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#BD2D87",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#D664BE",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#DF99F0",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#B191FF",
+        }
+      }
+    />
+    <button
+      className="delete-button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className="delete-icon"
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f1f8",
+              "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z",
+            ],
+            "iconName": "trash",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </button>
+  </div>
+  <div
+    className="mapped-palettes"
+    key="695810d5-f1c8-41be-9ea9-1242609fb06a"
+    onClick={[Function]}
+  >
+    <span
+      className="palette-name"
+    >
+      Fall colors
+    </span>
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#FCD0A1",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#B1B695",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#A690A4",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#EFA958",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#AFD2E9",
+        }
+      }
+    />
+    <button
+      className="delete-button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className="delete-icon"
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f1f8",
+              "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z",
+            ],
+            "iconName": "trash",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </button>
+  </div>
+  <div
+    className="mapped-palettes"
+    key="e99541f9-4c4f-45c2-a03b-3bcf3c227de9"
+    onClick={[Function]}
+  >
+    <span
+      className="palette-name"
+    >
+      Winter colors
+    </span>
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#594157",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#726DA8",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#7D8CC4",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#A0D2DB",
+        }
+      }
+    />
+    <span
+      className="color-minibox"
+      style={
+        Object {
+          "backgroundColor": "#BEE7E8",
+        }
+      }
+    />
+    <button
+      className="delete-button"
+    >
+      <FontAwesomeIcon
+        border={false}
+        className="delete-icon"
+        fixedWidth={false}
+        flip={null}
+        icon={
+          Object {
+            "icon": Array [
+              448,
+              512,
+              Array [],
+              "f1f8",
+              "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z",
+            ],
+            "iconName": "trash",
+            "prefix": "fas",
+          }
+        }
+        inverse={false}
+        listItem={false}
+        mask={null}
+        pull={null}
+        pulse={false}
+        rotation={null}
+        size={null}
+        spin={false}
+        symbol={false}
+        title=""
+        transform={null}
+      />
+    </button>
+  </div>
+</div>
+`;

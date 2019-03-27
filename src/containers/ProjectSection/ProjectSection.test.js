@@ -11,7 +11,7 @@ describe('ProjectSection', () => {
     });
 
   describe('ProjectSection component', () => {
-    it.skip('should properly render the component elements', () => {
+    it('should properly render the component elements', () => {
       expect(wrapper).toMatchSnapshot();
     });
   });
