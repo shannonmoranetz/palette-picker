@@ -37,18 +37,20 @@ export class PaletteControls extends Component {
   }
 
   render() {
-    return (
-      <div className="PaletteControls">
-        {this.props.palettes.length ? (
-          <div className="palette-controls-container">
-            <button className="generate-button" onClick={this.generateRandomColors}>Generate New Palette!</button>
-            <h2 className="palette-header">{this.findPaletteName()}</h2>
-          </div>
-        ) : (
-          <LoadingDisplay/>
-        )}
-      </div>
-    );
+    if (this.props.palettes) {
+      return (
+        <div className="PaletteControls">
+          {this.props.palettes.length ? (
+            <div className="palette-controls-container">
+              <button className="generate-button" onClick={this.generateRandomColors}>Generate New Palette!</button>
+              <h2 className="palette-header">{this.findPaletteName()}</h2>
+            </div>
+          ) : (
+            <LoadingDisplay/>
+          )}
+        </div>
+      )
+    }
   }
 }
 
