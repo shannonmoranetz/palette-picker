@@ -75,11 +75,11 @@ export class ProjectControls extends Component {
       const paletteData = {
         project_id: matchingProjectId,
         name: paletteName,
-        color1: hexcodes[0],
-        color2: hexcodes[1],
-        color3: hexcodes[2],
-        color4: hexcodes[3],
-        color5: hexcodes[4]
+        color1: hexcodes[0].color,
+        color2: hexcodes[1].color,
+        color3: hexcodes[2].color,
+        color4: hexcodes[3].color,
+        color5: hexcodes[4].color
       }
       let response = await fetchData(`/palettes`, 'POST', paletteData);
       let palette = {...paletteData, id: response.id}

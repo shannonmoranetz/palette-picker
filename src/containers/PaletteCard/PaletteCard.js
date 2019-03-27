@@ -17,7 +17,7 @@ export class PaletteCard extends Component {
           <span className="color-minibox" style={{ backgroundColor: `#${color3}`}}></span>
           <span className="color-minibox" style={{ backgroundColor: `#${color4}`}}></span>
           <span className="color-minibox" style={{ backgroundColor: `#${color5}`}}></span>
-          <button id={id} onClick={(e) => this.handleDeletePalette(e)} className="delete-button">del</button>
+          <span role="img" id={id} onClick={(e) => this.handleDeletePalette(e)} className="delete-button">🗑️</span>
         </div>
       )
     })
@@ -39,9 +39,14 @@ export class PaletteCard extends Component {
       return palette.id === id
     })
     const { color1, color2, color3, color4, color5 } = hexcodes;
-    this.props.setHexcodes([ color1, color2, color3, color4, color5 ])
+    this.props.setHexcodes([ 
+      {color: color1, isLocked: false}, 
+      {color: color2, isLocked: false}, 
+      {color: color3, isLocked: false}, 
+      {color: color4, isLocked: false}, 
+      {color: color5, isLocked: false} 
+    ])
   }
-
 
   render() {
     return (

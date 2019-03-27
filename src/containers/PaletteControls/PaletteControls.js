@@ -29,8 +29,9 @@ export class PaletteControls extends Component {
         hexStringArray.push(generatedHexcode);
       }
       let hexcode = hexStringArray.join('');
-      newColors.push(hexcode);
+      newColors.push({ color: hexcode, isLocked: false});
     }
+    // console.log(newColors)
     this.props.setHexcodes(newColors);
   }
 
@@ -48,7 +49,8 @@ export class PaletteControls extends Component {
 
 export const mapStateToProps = (state) => ({
   palettes: state.palettes,
-  hexcodes: state.hexcodes
+  hexcodes: state.hexcodes,
+  lockedHexcodes: state.lockedHexcodes
 });
 
 export const mapDispatchToProps = (dispatch) => ({

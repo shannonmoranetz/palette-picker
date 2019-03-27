@@ -34,7 +34,7 @@ export class ColorCard extends Component {
 }
 
 export const mapStateToProps = (state) => ({
-	lockedHexcodes: state.lockedHexcodes
+  lockedHexcodes: state.lockedHexcodes
 });
 
 export const mapDispatchToProps = (dispatch) => ({

@@ -11,6 +11,7 @@ export class ProjectCard extends Component {
       const matchingPalettes = palettes.filter((palette) => {
         return palette.project_id === project.id
     })
+    console.log(matchingPalettes)
     return matchingPalettes;
   }
 
