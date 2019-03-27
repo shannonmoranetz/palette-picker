@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ColorCard should properly render the component elements 1`] = `
+exports[`ColorCard ColorCard component should properly render the component elements 1`] = `
 <div
   className="ColorCard"
   style={
     Object {
-      "backgroundColor": "#undefined",
+      "backgroundColor": "#ffffff",
     }
   }
 >
@@ -44,6 +44,7 @@ exports[`ColorCard should properly render the component elements 1`] = `
     className="hexcode"
   >
     #
+    ffffff
   </p>
 </div>
 `;

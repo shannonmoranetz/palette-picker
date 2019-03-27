@@ -42,17 +42,19 @@ export class ColorBox extends Component {
 	};
 
 	render() {
-		return (
-			<div className="ColorBox">
-				{this.props.palettes.length ? (
-					<div className="mapped-colors">
-						{this.returnColorCards()}
-					</div>
-				) : (
-					<LoadingDisplay/>
-				)}
-			</div>
-		)
+		if (this.props.palettes) {
+			return (
+				<div className="ColorBox">
+					{this.props.palettes.length ? (
+						<div className="mapped-colors">
+							{this.returnColorCards()}
+						</div>
+					) : (
+						<LoadingDisplay/>
+					)}
+				</div>
+			)
+		}
 	}
 }
 
