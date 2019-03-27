@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingDisplay LoadingDisplay component should properly render the component elements 1`] = `
+<div
+  className="LoadingDisplay"
+>
+  <h2
+    className="title"
+  >
+    Loading...
+  </h2>
+</div>
+`;

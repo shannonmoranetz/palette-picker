@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ProjectSection } from './ProjectSection';
+import { ProjectSection, mapStateToProps } from './ProjectSection';
 
 describe('ProjectSection', () => {
   let wrapper;
@@ -9,7 +9,28 @@ describe('ProjectSection', () => {
       <ProjectSection/>
       )
     });
-  it.skip('should properly render the component elements', () => {
-    expect(wrapper).toMatchSnapshot();
+
+  describe('ProjectSection component', () => {
+    it.skip('should properly render the component elements', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
+
+  describe('mapStateToProps', () => {
+    it('should return an object with loadedProject as key', () => {
+      const mockState = {
+        projects: [],
+        isLoading: true,
+        error: '',
+        palettes: [],
+        extra: '',
+        loadedProject: ''
+      }
+      const expected = {
+        loadedProject: ''
+      }
+      const mappedProps = mapStateToProps(mockState)
+      expect(mappedProps).toEqual(expected)
+    });
   });
 });

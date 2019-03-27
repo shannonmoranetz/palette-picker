@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProjectList should properly render the component elements 1`] = `
+exports[`ProjectList ProjectList component should properly render the component elements 1`] = `
 <div
   className="ProjectList"
 >
   <Connect(ProjectCard)
-    key="0f81c0fa-56dd-4c99-9c47-f7032c3c8ef0"
+    key="92afe1e5-93db-4018-8956-b6072e550c48"
     project={
       Object {
         "created_at": "2019-03-26T05:17:02.689Z",
@@ -16,7 +16,7 @@ exports[`ProjectList should properly render the component elements 1`] = `
     }
   />
   <Connect(ProjectCard)
-    key="91aa06c9-68f6-4669-b9ef-927739caa0c3"
+    key="5c4379af-b8c0-48c7-a162-f9c3dc465a87"
     project={
       Object {
         "created_at": "2019-03-26T05:17:02.702Z",
@@ -27,7 +27,7 @@ exports[`ProjectList should properly render the component elements 1`] = `
     }
   />
   <Connect(ProjectCard)
-    key="e139f6df-062b-4963-ab7f-64f7cf5341e8"
+    key="a72ea716-77c6-40cf-b6f8-0580e1659853"
     project={
       Object {
         "created_at": "2019-03-26T05:17:02.727Z",
