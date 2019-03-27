@@ -6,7 +6,7 @@ describe('ColorBox', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ColorBox/>
+      <ColorBox />
       )
     });
   it('should properly render the component elements', () => {

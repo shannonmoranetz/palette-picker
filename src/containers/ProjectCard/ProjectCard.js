@@ -70,21 +70,23 @@ export class ProjectCard extends Component {
 
   render() {
     const { project } = this.props;
-    return (
-      <div className="ProjectCard">
-        {this.props.palettes.length ? (
-          <div onClick={() => this.updateProjectName()}>
-            <p className="project-name" onClick={(e) => this.updateSelectedPalette(e)}>{project.name.toUpperCase()}</p>
-              <div className="palette-container" onClick={(e) => this.updateSelectedPalette(e)}>
-                  { this.returnElements() }
-              </div>
-            <button className="delete-project-button">Delete Project</button>
-          </div>
-        ) : (
-          <LoadingDisplay/>
-        )}
-      </div>
-    );
+    if (this.props.palettes) {
+      return (
+        <div className="ProjectCard">
+          {this.props.palettes.length ? (
+            <div onClick={() => this.updateProjectName()}>
+              <p className="project-name" onClick={(e) => this.updateSelectedPalette(e)}>{project.name.toUpperCase()}</p>
+                <div className="palette-container" onClick={(e) => this.updateSelectedPalette(e)}>
+                    { this.returnElements() }
+                </div>
+              <button className="delete-project-button">Delete Project</button>
+            </div>
+          ) : (
+            <LoadingDisplay/>
+          )}
+        </div>
+      );
+    }
   }
 }
 
