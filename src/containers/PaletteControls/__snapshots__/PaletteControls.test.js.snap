@@ -1,18 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PaletteControls should properly render the component elements 1`] = `
-<div
-  className="PaletteControls"
->
-  <button
-    className="generate-button"
-  >
-    Generate New Palette!
-  </button>
-  <h2
-    className="palette-header"
-  >
-    PALETTE 1
-  </h2>
-</div>
-`;
+exports[`PaletteControls PaletteControls component should properly render the component elements 1`] = `""`;
