@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
-import { toggleDisplayRandom, setCurrentPaletteId, setCurrentProjectName } from '../../actions/index';
+import { toggleDisplayRandom, setCurrentPaletteId, setCurrentProjectName, setHexcodes } from '../../actions/index';
 import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
 
 export class ProjectCard extends Component {
@@ -41,24 +41,29 @@ export class ProjectCard extends Component {
       let clickedPalette = matchingPalettes[i];
       nameId = clickedPalette.name
     } else {
-      nameId = null
+      nameId = null;
     }
-    return nameId
+    return nameId;
   }
 
   updateSelectedPalette = async (e) => {
     const  { palettes, currentPaletteId } = this.props;
     let paletteName = e.target.id;
     let matchingPalettes = await this.findProjectPalette();
+
     await palettes.forEach((palette) => {
       if (palette.name.includes(paletteName)) {
         this.props.setCurrentPaletteId(palette.id)
       }
     })
+
     const selectedPalette = await matchingPalettes.find((palette) => {
       return palette.id === currentPaletteId
     })
-    this.props.toggleDisplayRandom(false);
+    // this.props.toggleDisplayRandom(false);
+    const { color1, color2, color3, color4, color5 } = selectedPalette;
+    this.props.setHexcodes([ color1, color2, color3, color4, color5])
+    console.log('selectedPalette: ',selectedPalette)
     return selectedPalette;
   }
 
@@ -97,6 +102,7 @@ export const mapDispatchToProps = (dispatch) => ({
   toggleDisplayRandom: (shouldDisplay) => dispatch(toggleDisplayRandom(shouldDisplay)),
   setCurrentPaletteId: (paletteId) => dispatch(setCurrentPaletteId(paletteId)),
   setCurrentProjectName: (projectName) => dispatch(setCurrentProjectName(projectName)),
+  setHexcodes: (hexcodes) => dispatch(setHexcodes(hexcodes)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectCard);

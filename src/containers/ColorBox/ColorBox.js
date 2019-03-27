@@ -44,11 +44,17 @@ export class ColorBox extends Component {
 	};
 
 	render() {
+		const { hexcodes } = this.props
 		return (
 			<div className="ColorBox">
 				{this.props.palettes.length ? (
 					<div className="mapped-colors">
-						{this.props.shouldDisplayRandom ? this.createRandomPaletteColors() : this.findExistingPaletteColors()}
+						{/* {this.props.shouldDisplayRandom ? this.createRandomPaletteColors() : this.findExistingPaletteColors()} */}
+						<ColorCard key={uuid()} color={hexcodes[0]} />
+						<ColorCard key={uuid()} color={hexcodes[1]} />
+						<ColorCard key={uuid()} color={hexcodes[2]} />
+						<ColorCard key={uuid()} color={hexcodes[3]} />
+						<ColorCard key={uuid()} color={hexcodes[4]} />
 					</div>
 				) : (
 					<LoadingDisplay/>
