@@ -4,7 +4,7 @@ exports[`PaletteSection should properly render the component elements 1`] = `
 <div
   className="PaletteSection"
 >
-  <PaletteControls />
+  <Connect(PaletteControls) />
   <Connect(ColorBox) />
 </div>
 `;
