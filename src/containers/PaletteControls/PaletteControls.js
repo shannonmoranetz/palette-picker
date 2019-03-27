@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setHexcodes, toggleDisplayRandom } from '../../actions/index';
-import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
 
 export class PaletteControls extends Component {
 
@@ -10,12 +9,12 @@ export class PaletteControls extends Component {
   }
 
   findPaletteName = () => {
-    const  { palettes, currentPaletteId } = this.props;
+    const  { palettes } = this.props;
     let matchingPalette = palettes.filter((palette) => {
-      return palette.id === currentPaletteId
+      return palette.color1.includes(this.props.hexcodes[0])
     })
     if (!matchingPalette.length) {
-      matchingPalette = [{ name: 'Palette' }]
+      matchingPalette = [{ name: 'Random' }]
     }
     return matchingPalette[0].name.toUpperCase();
   }
@@ -38,14 +37,10 @@ export class PaletteControls extends Component {
   render() {
     return (
       <div className="PaletteControls">
-        {this.props.palettes.length ? (
           <div className="palette-controls-container">
             <button className="generate-button" onClick={this.generateRandomColors}>Generate New Palette!</button>
             <h2 className="palette-header">{this.findPaletteName()}</h2>
           </div>
-        ) : (
-          <LoadingDisplay/>
-        )}
       </div>
     );
   }
@@ -53,7 +48,6 @@ export class PaletteControls extends Component {
 
 export const mapStateToProps = (state) => ({
   palettes: state.palettes,
-  currentPaletteId: state.currentPaletteId,
   hexcodes: state.hexcodes
 });
 

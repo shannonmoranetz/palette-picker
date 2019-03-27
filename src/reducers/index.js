@@ -3,8 +3,6 @@ import { projectsReducer } from './projectsReducer';
 import { errorReducer } from './errorReducer';
 import { loadingReducer } from './loadingReducer';
 import { palettesReducer } from './palettesReducer';
-import { currentPaletteIdReducer } from './currentPaletteIdReducer';
-import { currentProjectNameReducer } from './currentProjectNameReducer';
 import { hexcodesReducer } from './hexcodesReducer';
 import { shouldDisplayRandomReducer } from './shouldDisplayRandomReducer';
 import { lockedHexcodesReducer } from './lockedHexcodesReducer';
@@ -12,8 +10,6 @@ import { lockedHexcodesReducer } from './lockedHexcodesReducer';
 const rootReducer = combineReducers({
   projects: projectsReducer,
   palettes: palettesReducer,
-  currentPaletteId: currentPaletteIdReducer,
-  currentProjectName: currentProjectNameReducer,
   hexcodes: hexcodesReducer,
   lockedHexcodes: lockedHexcodesReducer,
   shouldDisplayRandom: shouldDisplayRandomReducer,

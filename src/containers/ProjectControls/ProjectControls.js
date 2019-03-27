@@ -123,9 +123,7 @@ export class ProjectControls extends Component {
 export const mapStateToProps = (state) => ({
   projects: state.projects,
   palettes: state.palettes,
-  currentPaletteId: state.currentPaletteId,
-  randomHexcodes: state.randomHexcodes,
-  currentProjectName: state.currentProjectName
+  randomHexcodes: state.randomHexcodes
 });
 
 export const mapDispatchToProps = (dispatch) => ({

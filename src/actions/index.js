@@ -23,11 +23,6 @@ export const setCurrentPaletteId = (paletteId) => ({
   paletteId
 });
 
-export const setCurrentProjectName = (projectName) => ({
-  type: 'SET_CURRENT_PROJECT_NAME', 
-  projectName
-});
-
 export const setHexcodes = (hexcodes) => ({
   type: 'SET_HEXCODES', 
   hexcodes

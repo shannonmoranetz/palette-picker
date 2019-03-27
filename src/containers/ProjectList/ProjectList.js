@@ -9,7 +9,6 @@ export class ProjectList extends Component {
     const { projects } = this.props;
     return (
       <div className="ProjectList">
-				{projects.length ? (
           <div className="mapped-projects">
             <p className="projectlist-subtitle">Your Creations:</p>
             {
@@ -18,9 +17,7 @@ export class ProjectList extends Component {
               })
             }
           </div>
-        ) : (
           <p className="projects-reminder">No saved projects.</p>
-        )}
       </div>
     );
   }
