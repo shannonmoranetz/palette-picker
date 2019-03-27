@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { fetchData } from '../../utils/api.js';
-import { fetchProjects } from '../../thunks/fetchProjects';
-import { fetchPalettes } from '../../thunks/fetchPalettes';
+import { addPalette, addProject } from '../../actions/index';
 import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
 
@@ -27,27 +26,29 @@ export class ProjectControls extends Component {
 
   createProject = async () => {
     const { projectName } = this.state;
-    let isDuplicate = this.checkDuplicateName(projectName);
+    const { projects, addProject } = this.props;
+    let isDuplicate = this.checkDuplicateName(projectName, projects);
     if (!projectName.length) {
       alert('You must provide a name to submit a new project.');
     } else if (isDuplicate) {
       alert('Duplicate project names are not permitted.');
     } else {
       const projectData = { name: projectName };
-      await fetchData('/projects', 'POST', projectData);
-      this.props.fetchProjects();
+      let response = await fetchData('/projects', 'POST', projectData);
+      let project = {...projectData, id: response.id}
+      addProject(project)
     }
   }
 
-  checkDuplicateName = (projectName) => {
-    let isDuplicate;
-    this.props.projects.forEach(project => {
-      if(project.name === projectName) {
-        isDuplicate = true;
-      } else {
-        isDuplicate = false;
-      }
+  checkDuplicateName = (name, itemsToIterate) => {
+    let isDuplicate = itemsToIterate.filter(item => {
+      return item.name.toLowerCase() === name.toLowerCase();
     })
+    if (isDuplicate.length) {
+      isDuplicate = true;
+    } else {
+      isDuplicate = false;
+    }
     return isDuplicate;
   }
 
@@ -63,16 +64,16 @@ export class ProjectControls extends Component {
 
   createPalette = async () => {
     const { paletteName } = this.state;
-    const { hexcodes } = this.props;
-    let isDuplicate = this.checkDuplicateName(paletteName);
+    const { hexcodes, palettes, addPalette } = this.props;
+    let isDuplicate = this.checkDuplicateName(paletteName, palettes);
     if (!paletteName.length) {
       alert('You must provide a name to submit a new palette.');
     } else if (isDuplicate) {
       alert('Duplicate palette names are not permitted.');
     } else {
       let matchingProjectId = this.findMatchingProject();
-      const paletteData = { 
-        project_id: matchingProjectId, 
+      const paletteData = {
+        project_id: matchingProjectId,
         name: paletteName,
         color1: hexcodes[0],
         color2: hexcodes[1],
@@ -80,8 +81,9 @@ export class ProjectControls extends Component {
         color4: hexcodes[3],
         color5: hexcodes[4]
       }
-      await fetchData(`/palettes`, 'POST', paletteData);
-      // this.props.fetchPalettes();
+      let response = await fetchData(`/palettes`, 'POST', paletteData);
+      let palette = {...paletteData, id: response.id}
+      addPalette(palette)
     }
   }
 
@@ -92,7 +94,6 @@ export class ProjectControls extends Component {
     return matchedProject.id
   }
     
-
   populateDropdown = () => { 
     return (
     <select value={this.state.selectedSaveLocation} onChange={(e) => this.setSelectedSaveLocation(e)}>
@@ -133,8 +134,8 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  fetchProjects: () => dispatch(fetchProjects()),
-  fetchPalettes: (id) => dispatch(fetchPalettes(id))
+  addProject: (project) => dispatch(addProject(project)),
+  addPalette: (palette) => dispatch(addPalette(palette))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectControls);

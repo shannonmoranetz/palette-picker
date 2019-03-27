@@ -13,9 +13,19 @@ export const setProjects = (projects) => ({
   projects
 });
 
+export const addProject = (project) => ({
+  type: 'ADD_PROJECT', 
+  project
+});
+
 export const setPalettes = (palettes) => ({
   type: 'SET_PALETTES', 
   palettes
+});
+
+export const addPalette = (palette) => ({
+  type: 'ADD_PALETTE', 
+  palette
 });
 
 export const setLoadedProject = (loadedProject) => ({

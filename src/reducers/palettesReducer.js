@@ -6,6 +6,9 @@ export const palettesReducer = (state = [], action) => {
         return a.id - b.id
       })
       return sortedPalettes;
+    case 'ADD_PALETTE':
+      let updatedPalettes = [...state, action.palette];
+      return updatedPalettes;
     default:
       return state;
   }
