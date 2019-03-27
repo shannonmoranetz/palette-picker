@@ -5,6 +5,6 @@ exports[`ParentSection should properly render the component elements 1`] = `
   className="ParentSection"
 >
   <PaletteSection />
-  <ProjectSection />
+  <Connect(ProjectSection) />
 </div>
 `;

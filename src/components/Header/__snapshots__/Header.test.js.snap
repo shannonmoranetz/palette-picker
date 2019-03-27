@@ -7,16 +7,6 @@ exports[`Header should properly render the component elements 1`] = `
   <div
     className="title-container"
   >
-    <h1
-      className="title"
-    >
-      pa
-      <span
-        className="title-em"
-      >
-        Lit
-      </span>
-    </h1>
     <FontAwesomeIcon
       border={false}
       className="fire-icon"
@@ -47,15 +37,16 @@ exports[`Header should properly render the component elements 1`] = `
       title=""
       transform={null}
     />
-  </div>
-  <div
-    className="subtitle-container"
-  >
-    <p
-      className="subtitle"
+    <h1
+      className="title"
     >
-      Find and save your favorite colors
-    </p>
+      pa
+      <span
+        className="title-em"
+      >
+        Lit
+      </span>
+    </h1>
   </div>
 </div>
 `;
