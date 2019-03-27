@@ -5,11 +5,10 @@ export const projectsReducer = (state = [], action) => {
     case 'ADD_PROJECT':
       return [...state, action.project]
     case 'DELETE_PROJECT':
-      let previousProjects = state.filter((project) => {
+      let updatedProjects = state.filter((project) => {
         return action.id !== project.id
       })
-      console.log(previousProjects)
-      return previousProjects;
+      return updatedProjects;
     default:
       return state;
   }

@@ -33,6 +33,11 @@ export const addPalette = (palette) => ({
   palette
 });
 
+export const deletePalette = (id) => ({
+  type: 'DELETE_PALETTE', 
+  id
+});
+
 export const setLoadedProject = (loadedProject) => ({
   type: 'SET_LOADED_PROJECT', 
   loadedProject

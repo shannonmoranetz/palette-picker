@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import uuid from 'uuid/v4';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { setHexcodes } from '../../actions/index';
+import { setHexcodes, deletePalette } from '../../actions/index';
+import { fetchData } from '../../utils/api.js';
 
 export class PaletteCard extends Component {
 
@@ -18,12 +17,23 @@ export class PaletteCard extends Component {
           <span className="color-minibox" style={{ backgroundColor: `#${color3}`}}></span>
           <span className="color-minibox" style={{ backgroundColor: `#${color4}`}}></span>
           <span className="color-minibox" style={{ backgroundColor: `#${color5}`}}></span>
-          <button className="delete-button"><FontAwesomeIcon icon={faTrash} className="delete-icon"/></button>
+          <button id={id} onClick={(e) => this.handleDeletePalette(e)} className="delete-button">del</button>
         </div>
       )
     })
   }
   
+  handleDeletePalette = async (e) => {
+    let paletteId = e.target.id;
+    const matchingPalette = this.props.palettes.find((palette) => {
+      return palette.id == paletteId
+    })
+    paletteId = matchingPalette.id;
+    let response = await fetchData(`/palettes/${paletteId}`, 'DELETE');
+    let id = response.id;
+    this.props.deletePalette(id);
+  }
+
   updateHexcodes = (id) => {
     const hexcodes = this.props.palettes.find((palette) => {
       return palette.id === id
@@ -31,6 +41,7 @@ export class PaletteCard extends Component {
     const { color1, color2, color3, color4, color5 } = hexcodes;
     this.props.setHexcodes([ color1, color2, color3, color4, color5 ])
   }
+
 
   render() {
     return (
@@ -47,6 +58,7 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = (dispatch) => ({
   setHexcodes: (hexcodes) => dispatch(setHexcodes(hexcodes)),
+  deletePalette: (id) => dispatch(deletePalette(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PaletteCard);
