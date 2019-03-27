@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { fetchProjects } from '../../thunks/fetchProjects';
 import { fetchPalettes } from '../../thunks/fetchPalettes';
+import { setLoading } from '../../actions/index';
 import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
-import ParentSection from '../../components/ParentSection/ParentSection';
+import PaletteSection from '../../components/PaletteSection/PaletteSection';
+import ProjectSection from '../../containers/ProjectSection/ProjectSection';
 import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
 
 export class App extends Component {
@@ -16,16 +18,20 @@ export class App extends Component {
     await this.props.projects.forEach((project) => {
       this.props.fetchPalettes(project.id);
     })
+    this.props.setLoading(false)
   }
 
   render() {
     return (
       <div className="App">
-				{!this.props.palettes ? (
-        <header className="App-header">
-          <Header />
-          <ParentSection />
-        </header>
+				{!this.props.isLoading ? (
+          <div>
+            <Header />
+            <div className="app-content">
+              <PaletteSection/>
+              <ProjectSection/>
+            </div>
+          </div>
         ) : (
           <LoadingDisplay/>
         )}
@@ -36,13 +42,13 @@ export class App extends Component {
 
 export const mapStateToProps = (state) => ({
   projects: state.projects,
-  isLoading: state.isLoading,
-  error: state.error
+  isLoading: state.isLoading
 });
 
 export const mapDispatchToProps = (dispatch) => ({
   fetchProjects: () => dispatch(fetchProjects()),
-  fetchPalettes: (id) => dispatch(fetchPalettes(id))
+  fetchPalettes: (id) => dispatch(fetchPalettes(id)),
+  setLoading: (isLoading) => dispatch(setLoading(isLoading))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

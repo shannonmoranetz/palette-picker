@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ParentSection } from './ParentSection';
+import { PaletteCard } from './PaletteCard';
 
-describe('ParentSection', () => {
+describe('PaletteCard', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ParentSection/>
+      <PaletteCard/>
       )
     });
   it('should properly render the component elements', () => {

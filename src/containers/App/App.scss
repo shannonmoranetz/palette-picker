@@ -6,3 +6,11 @@
 html, body {
   height: 100%;
 }
+
+.app-content {
+  border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 90vh;
+  background-color: #e6f5f7;
+}

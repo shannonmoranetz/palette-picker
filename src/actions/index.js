@@ -18,24 +18,14 @@ export const setPalettes = (palettes) => ({
   palettes
 });
 
-export const setCurrentPaletteId = (paletteId) => ({
-  type: 'SET_CURRENT_PALETTE_ID', 
-  paletteId
+export const setLoadedProject = (loadedProject) => ({
+  type: 'SET_LOADED_PROJECT', 
+  loadedProject
 });
 
-export const setCurrentProjectName = (projectName) => ({
-  type: 'SET_CURRENT_PROJECT_NAME', 
-  projectName
-});
-
-export const setRandomHexcodes = (hexcodes) => ({
-  type: 'SET_RANDOM_HEXCODES', 
+export const setHexcodes = (hexcodes) => ({
+  type: 'SET_HEXCODES', 
   hexcodes
-});
-
-export const toggleDisplayRandom = (shouldDisplay) => ({
-  type: 'DISPLAY_RANDOM', 
-  shouldDisplay
 });
 
 export const setLockedHexcodes = (hexcode) => ({
