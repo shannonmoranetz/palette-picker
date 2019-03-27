@@ -11,7 +11,7 @@ export class ProjectControls extends Component {
     this.state = {
       projectName: '',
       paletteName: '',
-      selectedSaveLocation: ''
+      selectedSaveLocation: 'Save to:'
     }
   }
 
@@ -51,6 +51,11 @@ export class ProjectControls extends Component {
     return isDuplicate;
   }
 
+
+
+
+
+  
   handleChangePalette = (e) => {
     let paletteName = e.target.value;
     this.setState({ paletteName })
@@ -63,22 +68,31 @@ export class ProjectControls extends Component {
 
   createPalette = async () => {
     const { paletteName } = this.state;
-    let isDuplicate = this.checkDuplicateName(paletteName);
-    if (!paletteName.length) {
-      alert('You must provide a name to submit a new palette.');
-    } else if (isDuplicate) {
-      alert('Duplicate palette names are not permitted.');
-    } else {
-      const paletteData = { name: paletteName };
-      await fetchData('/palettes', 'POST', paletteData);
-      this.props.fetchPalettes();
-    }
+    
+    // let isDuplicate = this.checkDuplicateName(paletteName);
+    // if (!paletteName.length) {
+    //   alert('You must provide a name to submit a new palette.');
+    // } else if (isDuplicate) {
+    //   alert('Duplicate palette names are not permitted.');
+    // } else {
+    //   const paletteData = { name: paletteName };
+    //   await fetchData('/palettes', 'POST', paletteData);
+    //   this.props.fetchPalettes();
+    // }
   }
 
   populateDropdown = () => { 
-    return this.props.projects.map((project) => {
-      return <option value={project.name} key={uuid()}>{project.name}</option>
-    })
+    return (
+    <select value={this.state.selectedSaveLocation} onChange={(e) => this.setSelectedSaveLocation(e)}>
+      {this.props.projects.map((project) => {
+      return <option id={project.name}value={project.name} key={uuid()} >{project.name}</option>
+    })}
+    </select>
+    )
+  }
+
+  setSelectedSaveLocation = (e) => {
+    this.setState({ selectedSaveLocation: e.target.value })
   }
 
   render() {
@@ -89,13 +103,10 @@ export class ProjectControls extends Component {
           <input onChange={(e) => this.handleChangeProject(e)} type="text" name="create-project" className="create-project-input"/>
           <button type="submit" className="save-project-button">Save Project</button>
         </form>
-        <form className="save-palette-form">
+        <form className="save-palette-form" onSubmit={(e) => this.setSelectedSaveLocation(e)}>
           <label htmlFor="save-palette" className="save-palette-label">Save your palette:</label><br/>
           <input type="text" name="save-palette" className="save-palette-input"/>
-          <select>
-            <option value="default">Save to:</option>
             { this.populateDropdown() }
-          </select>
           <button type="submit" className="save-palette-button">Save Palette</button>
         </form>
       </div>
