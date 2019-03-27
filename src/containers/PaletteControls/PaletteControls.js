@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setRandomHexcodes, toggleDisplayRandom } from '../../actions/index';
+import { setHexcodes, toggleDisplayRandom } from '../../actions/index';
 import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
 
 export class PaletteControls extends Component {
@@ -32,7 +32,7 @@ export class PaletteControls extends Component {
       let hexcode = hexStringArray.join('');
       newColors.push(hexcode);
     }
-    await this.props.setRandomHexcodes(newColors);
+    await this.props.setHexcodes(newColors);
     await this.props.toggleDisplayRandom(true);
   }
 
@@ -55,11 +55,11 @@ export class PaletteControls extends Component {
 export const mapStateToProps = (state) => ({
   palettes: state.palettes,
   currentPaletteId: state.currentPaletteId,
-  randomHexcodes: state.randomHexcodes
+  hexcodes: state.hexcodes
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  setRandomHexcodes: (hexcodes) => dispatch(setRandomHexcodes(hexcodes)),
+  setHexcodes: (hexcodes) => dispatch(setHexcodes(hexcodes)),
   toggleDisplayRandom: (shouldDisplay) => dispatch(toggleDisplayRandom(shouldDisplay))
 });
 
