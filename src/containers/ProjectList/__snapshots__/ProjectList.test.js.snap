@@ -4,10 +4,38 @@ exports[`ProjectList should properly render the component elements 1`] = `
 <div
   className="ProjectList"
 >
-  <p
-    className="projects-reminder"
-  >
-    No saved projects.
-  </p>
+  <Connect(ProjectCard)
+    key="0f81c0fa-56dd-4c99-9c47-f7032c3c8ef0"
+    project={
+      Object {
+        "created_at": "2019-03-26T05:17:02.689Z",
+        "id": 1,
+        "name": "Warm colors project",
+        "updated_at": "2019-03-26T05:17:02.689Z",
+      }
+    }
+  />
+  <Connect(ProjectCard)
+    key="91aa06c9-68f6-4669-b9ef-927739caa0c3"
+    project={
+      Object {
+        "created_at": "2019-03-26T05:17:02.702Z",
+        "id": 2,
+        "name": "Cool colors project",
+        "updated_at": "2019-03-26T05:17:02.702Z",
+      }
+    }
+  />
+  <Connect(ProjectCard)
+    key="e139f6df-062b-4963-ab7f-64f7cf5341e8"
+    project={
+      Object {
+        "created_at": "2019-03-26T05:17:02.727Z",
+        "id": 3,
+        "name": "Neutral colors project",
+        "updated_at": "2019-03-26T05:17:02.727Z",
+      }
+    }
+  />
 </div>
 `;

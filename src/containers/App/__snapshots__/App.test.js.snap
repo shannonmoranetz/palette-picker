@@ -4,11 +4,14 @@ exports[`App App component should properly render the component elements 1`] = `
 <div
   className="App"
 >
-  <header
-    className="App-header"
-  >
+  <div>
     <Header />
-    <ParentSection />
-  </header>
+    <div
+      className="app-content"
+    >
+      <PaletteSection />
+      <Connect(ProjectSection) />
+    </div>
+  </div>
 </div>
 `;
