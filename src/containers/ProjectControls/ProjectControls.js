@@ -35,7 +35,7 @@ export class ProjectControls extends Component {
     } else {
       const projectData = { name: projectName };
       let response = await fetchData('/projects', 'POST', projectData);
-      let project = {...projectData, id: response.id}
+      let project = {...projectData, id: response.id};
       addProject(project)
     }
   }

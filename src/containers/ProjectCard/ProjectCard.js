@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PaletteCard from '../../containers/PaletteCard/PaletteCard';
-import { setLoadedProject } from '../../actions';
+import { fetchData } from '../../utils/api.js';
+import { setLoadedProject, deleteProject } from '../../actions';
 
 export class ProjectCard extends Component {
 
@@ -13,6 +14,14 @@ export class ProjectCard extends Component {
     return matchingPalettes;
   }
 
+
+  deleteProject = async () => {
+    let projectId = this.props.project.id;
+    let response = await fetchData(`/projects/${projectId}`, 'DELETE');
+    let IdToDelete = response.id;
+    this.props.deleteProject(IdToDelete)
+  }
+
   render() {
     const { project } = this.props;
     return (
@@ -22,7 +31,7 @@ export class ProjectCard extends Component {
               <div className="palette-container">
                 <PaletteCard projectPalettes={this.findProjectPalettes()}/>
               </div>
-            <button className="delete-project-button">Delete Project</button>
+            <button onClick={this.deleteProject} className="delete-project-button">Delete Project</button>
           </div>
       </div>
     );
@@ -34,7 +43,8 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  setLoadedProject: (loadedProject) => dispatch(setLoadedProject(loadedProject))
+  setLoadedProject: (loadedProject) => dispatch(setLoadedProject(loadedProject)),
+  deleteProject: (id) => dispatch(deleteProject(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectCard);

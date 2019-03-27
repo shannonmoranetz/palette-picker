@@ -18,6 +18,11 @@ export const addProject = (project) => ({
   project
 });
 
+export const deleteProject = (id) => ({
+  type: 'DELETE_PROJECT', 
+  id
+});
+
 export const setPalettes = (palettes) => ({
   type: 'SET_PALETTES', 
   palettes
