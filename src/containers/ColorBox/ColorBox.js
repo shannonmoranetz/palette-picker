@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ColorCard from '../../containers/ColorCard/ColorCard';
 import uuid from 'uuid/v4';
 import LoadingDisplay from '../../components/LoadingDisplay/LoadingDisplay';
+import { setRandomHexcodes } from '../../actions/index';
 
 export class ColorBox extends Component {
 
@@ -34,6 +35,7 @@ export class ColorBox extends Component {
 			if (matchingPalette.length) {
 				const { color1, color2, color3, color4, color5 } = matchingPalette[0];
 				paletteColors = [ color1, color2, color3, color4, color5 ];
+				this.props.setRandomHexcodes(paletteColors);
 			} else {
 				paletteColors = randomColors;
 			}
@@ -63,4 +65,9 @@ export const mapStateToProps = (state) => ({
 	shouldDisplayRandom: state.shouldDisplayRandom
 });
 
-export default connect(mapStateToProps)(ColorBox);
+export const mapDispatchToProps = (dispatch) => ({
+  setRandomHexcodes: (hexcodes) => dispatch(setRandomHexcodes(hexcodes))
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ColorBox);
