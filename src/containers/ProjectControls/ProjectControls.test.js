@@ -33,7 +33,50 @@ describe('ProjectControls', () => {
       };
       wrapper.instance().handleChangeProject(mockEvent)
       expect(wrapper.state()).toEqual(expectedState);
-      });
+    });
+
+    it('handleSubmitProject should call createProject', () => {
+      const mockEvent = {
+        target: {
+          value: 'Cool Colors'
+        },
+        preventDefault: jest.fn()
+      }
+      const spy = jest.spyOn(wrapper.instance(), 'handleSubmitProject')
+      wrapper.find('.create-project-form').simulate('submit', mockEvent)
+      expect(spy).toHaveBeenCalledWith(mockEvent)
+    })
+
+    it('handleChangePalette should set state with the palette name', () => {
+      const mockEvent = {
+        target: {
+          value: 'Yummy Palette'
+        }
+      }
+      const expectedState = {
+        projectName: 'Warm Colors Project',
+        paletteName: 'Yummy Palette',
+        selectedSaveLocation: 'Warm colors project'
+      };
+      wrapper.instance().handleChangePalette(mockEvent)
+      expect(wrapper.state()).toEqual(expectedState);
+    });
+
+    it('setSelectedSaveLocation should set state with the selected location', () => {
+      const mockEvent = {
+        target: {
+          value: 'Winter colors project'
+        }
+      }
+      const expectedState = {
+        projectName: 'Warm Colors Project',
+        paletteName: '',
+        selectedSaveLocation: 'Winter colors project'
+      };
+      wrapper.instance().setSelectedSaveLocation(mockEvent)
+      expect(wrapper.state()).toEqual(expectedState);
+    });
+
   });
 
   describe('mapStateToProps', () => {
