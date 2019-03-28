@@ -37,6 +37,10 @@ Run `npm test` from the root directory
 #### Desktop View:
 ![Wireframes-desktop](pallit_picker_ss.png)
 
+### Design:
+Inspiration from Dribble: cool color buttons with hover effect
+![Dribble](https://dribbble.com/shots/6229834-Language-learning-iOS-app)
+
 ### Future Enhancements:
 - Media Queries
 - Create functionality for searching projects by hexcode
