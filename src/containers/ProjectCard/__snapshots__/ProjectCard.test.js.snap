@@ -48,6 +48,7 @@ exports[`ProjectCard ProjectCard Component should properly render the component 
     </div>
     <button
       className="delete-project-button"
+      onClick={[Function]}
     >
       Delete Project
     </button>

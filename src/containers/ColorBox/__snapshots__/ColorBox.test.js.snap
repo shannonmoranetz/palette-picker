@@ -8,24 +8,24 @@ exports[`ColorBox ColorBox component should properly render the component elemen
     className="mapped-colors"
   >
     <Connect(ColorCard)
-      color="ffffff"
-      key="255d3cf7-25a1-4f5e-9cfe-6aad4981f1dc"
+      hexcode="ffffff"
+      key="ab4c8538-bde5-461e-8518-9b78c667d948"
     />
     <Connect(ColorCard)
-      color="fffff1"
-      key="b700266b-b677-40cf-9416-57a3570a48c7"
+      hexcode="fffff1"
+      key="dc5b8588-1be9-486d-beaf-7e9cc972134e"
     />
     <Connect(ColorCard)
-      color="fffff2"
-      key="5b7d8e2c-0ce9-4406-89e0-b52340fca8b0"
+      hexcode="fffff2"
+      key="ca5caf6c-ca5d-40a6-9ed6-5c0ec4f7db2b"
     />
     <Connect(ColorCard)
-      color="fffff3"
-      key="87f1d51a-3553-48dc-9d14-ba2ada427c74"
+      hexcode="fffff3"
+      key="1cda4b69-a5fe-4d06-91a9-55a47b2e9f31"
     />
     <Connect(ColorCard)
-      color="fffff4"
-      key="ea0966f7-a2d5-4073-bd74-a876c25f4261"
+      hexcode="fffff4"
+      key="1ab14239-e64b-40da-8ff1-c56c20d4b88f"
     />
   </div>
 </div>
