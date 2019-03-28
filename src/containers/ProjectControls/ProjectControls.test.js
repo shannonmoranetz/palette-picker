@@ -19,9 +19,22 @@ describe('ProjectControls', () => {
     it('should properly render the component elements', () => {
       expect(wrapper).toMatchSnapshot();
     });
+
+    it('handleChangeProject should set state with the project name', () => {
+      const mockEvent = {
+        target: {
+          value: 'Cool Colors'
+        }
+      }
+      const expectedState = {
+        projectName: 'Cool Colors',
+        paletteName: '',
+        selectedSaveLocation: 'Warm colors project'
+      };
+      wrapper.instance().handleChangeProject(mockEvent)
+      expect(wrapper.state()).toEqual(expectedState);
+      });
   });
-
-
 
   describe('mapStateToProps', () => {
     it('should return an object with projects, palettes, and hexcodes as keys', () => {
