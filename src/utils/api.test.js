@@ -23,6 +23,7 @@ describe('fetchData', () => {
     });
 
     it('should call fetch to POST with the correct parameters', () => {
+        method = 'POST'
         const expectedUrl = `https://palette-picker-api.herokuapp.com/api/v1${path}`;
         const expectedParams = {
             method: method,
@@ -33,7 +34,7 @@ describe('fetchData', () => {
         };
         window.fetch = jest.fn();
         fetchData(path, method, data);
-        expect(window.fetch).toHaveBeenCalledWith(expectedUrl, data);
+        expect(window.fetch).toHaveBeenCalledWith(expectedUrl, expectedParams);
     });
 
     it('should return an id if everything is okay with an ok status', async () => {
