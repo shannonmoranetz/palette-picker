@@ -5,14 +5,20 @@ import { setHexcodes } from '../../actions/index';
 export class PaletteControls extends Component {
 
   componentDidMount = () => {
-    this.props.setHexcodes();
-
+    const initialHexcodes = [
+      {color: 'FFFF82', isLocked: false},
+      {color: 'DDDCF7', isLocked: false},
+      {color: 'B5D99C', isLocked: false},
+      {color: 'FFAF66', isLocked: false},
+      {color: 'E65F5C', isLocked: false}
+    ]
+    this.props.setHexcodes(initialHexcodes);
   }
 
   findPaletteName = () => {
     const  { palettes } = this.props;
     let matchingPalette = palettes.filter((palette) => {
-      return palette.color1.includes(this.props.hexcodes[0])
+      return palette.color1.includes(this.props.hexcodes[0].color)
     })
     if (!matchingPalette.length) {
       matchingPalette = [{ name: 'Random' }]
@@ -35,7 +41,7 @@ export class PaletteControls extends Component {
         let randomHex = hexStringArray.join('');
         returnedHex.push(randomHex);
       }
-      return {color: returnedHex, isLocked: hexcode.isLocked};
+      return {color: returnedHex[0], isLocked: hexcode.isLocked};
     })
     this.props.setHexcodes(newColors);
   }
