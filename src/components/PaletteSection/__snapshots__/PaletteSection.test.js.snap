@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PaletteSection should properly render the component elements 1`] = `
+exports[`PaletteSection PaletteSection compoment should properly render the component elements 1`] = `
 <div
   className="PaletteSection"
 >

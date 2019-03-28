@@ -9,7 +9,10 @@ describe('Header', () => {
       <Header/>
       )
     });
-  it('should properly render the component elements', () => {
-    expect(wrapper).toMatchSnapshot();
+
+  describe('Header component', () => {
+    it('should properly render the component elements', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

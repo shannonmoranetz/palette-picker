@@ -1,3 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ColorBox ColorBox component should properly render the component elements 1`] = `""`;
+exports[`ColorBox ColorBox component should properly render the component elements 1`] = `
+<div
+  className="ColorBox"
+>
+  <div
+    className="mapped-colors"
+  >
+    <Connect(ColorCard)
+      color="ffffff"
+      key="255d3cf7-25a1-4f5e-9cfe-6aad4981f1dc"
+    />
+    <Connect(ColorCard)
+      color="fffff1"
+      key="b700266b-b677-40cf-9416-57a3570a48c7"
+    />
+    <Connect(ColorCard)
+      color="fffff2"
+      key="5b7d8e2c-0ce9-4406-89e0-b52340fca8b0"
+    />
+    <Connect(ColorCard)
+      color="fffff3"
+      key="87f1d51a-3553-48dc-9d14-ba2ada427c74"
+    />
+    <Connect(ColorCard)
+      color="fffff4"
+      key="ea0966f7-a2d5-4073-bd74-a876c25f4261"
+    />
+  </div>
+</div>
+`;

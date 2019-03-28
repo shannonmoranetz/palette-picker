@@ -1,15 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ColorBox } from './ColorBox';
+import { Search } from './Search';
 
-describe('ColorBox', () => {
+describe('Search', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ColorBox/>
+      <Search/>
       )
     });
-  it('should properly render the component elements', () => {
-    expect(wrapper).toMatchSnapshot();
+
+  describe('Search component', () => {
+    it('should properly render the component elements', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });

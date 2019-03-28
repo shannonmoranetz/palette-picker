@@ -8,8 +8,9 @@ describe('errorReducer', () => {
     });
 
     it('should return the error to set', () => {
+        const initialState = ''
         const expected = 'Error'
-        const result = errorReducer(undefined, actions.setError('Error'))
+        const result = errorReducer(initialState, actions.setError('Error'))
         expect(result).toEqual(expected)
     })
 });
