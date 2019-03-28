@@ -8,7 +8,7 @@ Description
 - Run `npm start` and visit localhost:3000 in your browser  
 
 ### Backend API URL:
-- 
+- https://palette-picker-api.herokuapp.com/
 
 ### Primary FE Technologies Used:
 * React
