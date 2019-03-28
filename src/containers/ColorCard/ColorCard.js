@@ -3,43 +3,39 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { faUnlock } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
-import { setLockedHexcodes, removeLockedHexcode } from '../../actions';
+import { setHexcodes } from '../../actions';
 
 export class ColorCard extends Component {
-  constructor() {
-    super()
-    this.state = {
-      icon: faUnlock
-    }
-  }
 
   toggleColorLock = async () => {
-    if (!this.props.lockedHexcodes.includes(this.props.color)) {
-      await this.props.setLockedHexcodes(this.props.color)
-      this.setState({ icon: faLock })
-    } else {
-      await this.props.removeLockedHexcode(this.props.color)
-      this.setState({ icon: faUnlock })
-    }
+    let updatedHexcodes = this.props.hexcodes.map((hexcode) => {
+      if(hexcode.color === this.props.hexcode.color && hexcode.isLocked === true){
+        hexcode.isLocked = false;
+      } else if (hexcode.color === this.props.hexcode.color) {
+        hexcode.isLocked = true;
+      }
+      return hexcode;
+    })
+    await this.props.setHexcodes(updatedHexcodes)
   }
   
   render() {
     return (
-      <div className="ColorCard" style={{backgroundColor: `#${this.props.color}`}}>
-            <FontAwesomeIcon icon={this.state.icon === faLock ? faLock : faUnlock} className="lock-icon" onClick={() => this.toggleColorLock()}/>
-            <p className="hexcode">#{this.props.color}</p>
+      <div className="ColorCard" style={{backgroundColor: `#${this.props.hexcode.color}`}}>
+            <FontAwesomeIcon icon={this.props.hexcode.isLocked ? faLock : faUnlock} className="lock-icon" onClick={(e) => this.toggleColorLock(e)}/>
+            <p className="hexcode">#{this.props.hexcode.color}</p>
       </div>
     );
   }
 }
 
 export const mapStateToProps = (state) => ({
-  lockedHexcodes: state.lockedHexcodes
+  lockedHexcodes: state.lockedHexcodes,
+  hexcodes: state.hexcodes
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  setLockedHexcodes: (hexcode) => dispatch(setLockedHexcodes(hexcode)),
-  removeLockedHexcode: (hexcode) => dispatch(removeLockedHexcode(hexcode))
+  setHexcodes: (hexcodes) => dispatch(setHexcodes(hexcodes))
 });
 
 

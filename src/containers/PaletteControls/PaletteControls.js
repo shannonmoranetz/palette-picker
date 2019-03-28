@@ -22,6 +22,7 @@ export class PaletteControls extends Component {
   generateRandomColors = () => {
     let possibleHexValues = "0123456789ABCDEF";
     let newColors = [];
+    
     for (let i = 0; i < 5; i++) {
       let hexStringArray = [];
       for (let j = 0; j < 6; j++) {

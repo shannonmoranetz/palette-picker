@@ -8,7 +8,7 @@ export class ColorBox extends Component {
 	renderColorCards = () => {
 		const { hexcodes } = this.props;
 		return hexcodes.map((hexcode) => {
-			return <ColorCard key={uuid()} color={hexcode.color} />
+			return <ColorCard key={uuid()} hexcode={hexcode} />
 		})
 	}
 
