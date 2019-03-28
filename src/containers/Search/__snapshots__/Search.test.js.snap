@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Search component should properly render the component elements 1`] = `
+<div
+  className="Search"
+>
+  <form
+    className="search-form"
+  >
+    <label
+      className="search-label"
+      htmlFor="search"
+    >
+      Search projects by hexcode:
+    </label>
+    <br />
+    <input
+      className="search-input"
+      name="search"
+      type="text"
+    />
+    <button
+      className="search-button"
+      type="submit"
+    >
+      Search
+    </button>
+  </form>
+</div>
+`;

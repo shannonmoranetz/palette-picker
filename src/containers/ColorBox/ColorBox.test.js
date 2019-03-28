@@ -6,7 +6,7 @@ describe('ColorBox', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ColorBox />
+      <ColorBox hexcodes={['ffffff', 'fffff1', 'fffff2', 'fffff3', 'fffff4']}/>
       )
     });
 
@@ -19,7 +19,7 @@ describe('ColorBox', () => {
   // **Write returnColorCards and findCurrentPaletteColors tests here**
 
   describe('mapStateToProps', () => {
-    it('should return an object with palettes, currentPaletteId, randomHexcodes, and shouldDisplayRandom as keys', () => {
+    it('should return an object with hexcodes as keys', () => {
       const mockState = {
         projects: [],
         isLoading: false,
@@ -28,14 +28,11 @@ describe('ColorBox', () => {
         extra: '',
         lockedHexcodes: [],
         currentPaletteId: 1,
-        randomHexcodes: [],
+        hexcodes: [],
         shouldDisplayRandom: true
       }
       const expected = {
-        palettes: [],
-        currentPaletteId: 1,
-        randomHexcodes: [],
-        shouldDisplayRandom: true
+        hexcodes: []
       }
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps).toEqual(expected)

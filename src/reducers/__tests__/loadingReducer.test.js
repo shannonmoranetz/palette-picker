@@ -4,7 +4,7 @@ import * as actions from '../../actions';
 describe('loadingReducer', () => {
 
     it('should return the initial state as default', () => {
-        const expected = false
+        const expected = true
         const result = loadingReducer(undefined, {})
         expect(result).toEqual(expected)
     });

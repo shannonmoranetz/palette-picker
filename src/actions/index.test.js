@@ -42,43 +42,23 @@ describe('actions', () => {
         expect(result).toEqual(expected)
     });
 
-    it('should return a type of SET_CURRENT_PALETTE_ID with an id', () => {
-        const paletteId = 1
+    it('should return a type of SET_LOADED_PROJECT with a project name', () => {
+        const loadedProject = 'Winter colors project'
         const expected = {
-            type: 'SET_CURRENT_PALETTE_ID',
-            paletteId
+            type: 'SET_LOADED_PROJECT',
+            loadedProject
         }
-        const result = actions.setCurrentPaletteId(paletteId)
+        const result = actions.setLoadedProject(loadedProject)
         expect(result).toEqual(expected)
     });
 
-    it('should return a type of SET_CURRENT_PROJECT_NAME with a project name', () => {
-        const projectName = 'Winter colors project'
-        const expected = {
-            type: 'SET_CURRENT_PROJECT_NAME',
-            projectName
-        }
-        const result = actions.setCurrentProjectName(projectName)
-        expect(result).toEqual(expected)
-    });
-
-    it('should return a type of SET_RANDOM_HEXCODES with an array of hexcodes', () => {
+    it('should return a type of SET_HEXCODES with an array of hexcodes', () => {
         const hexcodes = ["E522FA", "18ABBB", "FD1604", "BA2442", "D38F66"]
         const expected = {
-            type: 'SET_RANDOM_HEXCODES',
+            type: 'SET_HEXCODES',
             hexcodes
         }
-        const result = actions.setRandomHexcodes(hexcodes)
-        expect(result).toEqual(expected)
-    });
-
-    it('should return a type of DISPLAY_RANDOM with a bool', () => {
-        const shouldDisplay = true
-        const expected = {
-            type: 'DISPLAY_RANDOM',
-            shouldDisplay
-        }
-        const result = actions.toggleDisplayRandom(shouldDisplay)
+        const result = actions.setHexcodes(hexcodes)
         expect(result).toEqual(expected)
     });
 

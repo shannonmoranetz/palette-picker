@@ -34,18 +34,17 @@ describe('App', () => {
   });
 
   describe('mapStateToProps', () => {
-    it('should return an object with projects, isLoading, and error as keys', () => {
+    it('should return an object with projects and isLoading as keys', () => {
       const mockState = {
         projects: [],
-        isLoading: false,
+        isLoading: true,
         error: '',
         palettes: [],
         extra: ''
       }
       const expected = {
         projects: [],
-        isLoading: false,
-        error: ''
+        isLoading: true
       }
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps).toEqual(expected)

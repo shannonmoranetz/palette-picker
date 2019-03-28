@@ -9,7 +9,10 @@ describe('PaletteSection', () => {
       <PaletteSection/>
       )
     });
-  it('should properly render the component elements', () => {
-    expect(wrapper).toMatchSnapshot();
+
+  describe('PaletteSection compoment', () => {
+    it('should properly render the component elements', () => {
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 });
