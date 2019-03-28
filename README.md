@@ -36,7 +36,7 @@ Run `npm test` from the root directory
 
 ### Wireframes:
 #### Desktop View:
-![Wireframes-desktop]()
+![Wireframes-desktop](pallit_picker_ss.png)
 
 ### Future Enhancements:
 - Media Queries
