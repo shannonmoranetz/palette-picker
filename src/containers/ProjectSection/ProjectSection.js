@@ -14,7 +14,9 @@ export class ProjectSection extends Component {
 				</div>
 				<div className="content-container">
 					<ProjectControls/>
+					<hr />
 					<Search/>
+					<hr />
 					<ProjectList/>
 				</div>
 			</div>

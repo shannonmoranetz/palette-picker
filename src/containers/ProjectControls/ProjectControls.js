@@ -115,6 +115,7 @@ export class ProjectControls extends Component {
           <input onChange={(e) => this.handleChangeProject(e)} type="text" name="create-project" className="create-project-input"/>
           <button type="submit" className="save-project-button">Save Project</button>
         </form>
+        <br/>
         <form className="save-palette-form" onSubmit={(e) => this.handleSubmitPalette(e)}>
           <label htmlFor="save-palette" className="save-palette-label">Save your palette:</label><br/>
           <input onChange={(e) => this.handleChangePalette(e)} type="text" name="save-palette" className="save-palette-input"/>
