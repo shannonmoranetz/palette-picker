@@ -6,7 +6,7 @@ exports[`PaletteCard PaletteCard component should properly render the component 
 >
   <div
     className="mapped-palettes"
-    key="45d1d433-1999-48cf-b22e-6b8fa76a0539"
+    key="7ec242d1-c563-486e-872e-cd2c9d1b52bb"
     onClick={[Function]}
   >
     <span
@@ -54,44 +54,18 @@ exports[`PaletteCard PaletteCard component should properly render the component 
         }
       }
     />
-    <button
+    <span
       className="delete-button"
+      id={1}
+      onClick={[Function]}
+      role="img"
     >
-      <FontAwesomeIcon
-        border={false}
-        className="delete-icon"
-        fixedWidth={false}
-        flip={null}
-        icon={
-          Object {
-            "icon": Array [
-              448,
-              512,
-              Array [],
-              "f1f8",
-              "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z",
-            ],
-            "iconName": "trash",
-            "prefix": "fas",
-          }
-        }
-        inverse={false}
-        listItem={false}
-        mask={null}
-        pull={null}
-        pulse={false}
-        rotation={null}
-        size={null}
-        spin={false}
-        symbol={false}
-        title=""
-        transform={null}
-      />
-    </button>
+      🗑️
+    </span>
   </div>
   <div
     className="mapped-palettes"
-    key="ad621987-c3ed-4b18-8c35-bdcb8153404a"
+    key="4ac20a85-342b-412a-97ec-70cd6a354c29"
     onClick={[Function]}
   >
     <span
@@ -139,44 +113,18 @@ exports[`PaletteCard PaletteCard component should properly render the component 
         }
       }
     />
-    <button
+    <span
       className="delete-button"
+      id={2}
+      onClick={[Function]}
+      role="img"
     >
-      <FontAwesomeIcon
-        border={false}
-        className="delete-icon"
-        fixedWidth={false}
-        flip={null}
-        icon={
-          Object {
-            "icon": Array [
-              448,
-              512,
-              Array [],
-              "f1f8",
-              "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z",
-            ],
-            "iconName": "trash",
-            "prefix": "fas",
-          }
-        }
-        inverse={false}
-        listItem={false}
-        mask={null}
-        pull={null}
-        pulse={false}
-        rotation={null}
-        size={null}
-        spin={false}
-        symbol={false}
-        title=""
-        transform={null}
-      />
-    </button>
+      🗑️
+    </span>
   </div>
   <div
     className="mapped-palettes"
-    key="038ba621-7c51-47f3-ab49-3bc093240acf"
+    key="ac8f82f5-7743-419a-bab4-675713077a11"
     onClick={[Function]}
   >
     <span
@@ -224,44 +172,18 @@ exports[`PaletteCard PaletteCard component should properly render the component 
         }
       }
     />
-    <button
+    <span
       className="delete-button"
+      id={3}
+      onClick={[Function]}
+      role="img"
     >
-      <FontAwesomeIcon
-        border={false}
-        className="delete-icon"
-        fixedWidth={false}
-        flip={null}
-        icon={
-          Object {
-            "icon": Array [
-              448,
-              512,
-              Array [],
-              "f1f8",
-              "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z",
-            ],
-            "iconName": "trash",
-            "prefix": "fas",
-          }
-        }
-        inverse={false}
-        listItem={false}
-        mask={null}
-        pull={null}
-        pulse={false}
-        rotation={null}
-        size={null}
-        spin={false}
-        symbol={false}
-        title=""
-        transform={null}
-      />
-    </button>
+      🗑️
+    </span>
   </div>
   <div
     className="mapped-palettes"
-    key="259aacfd-6854-46c6-8569-c02f29aa222a"
+    key="29eb756d-0fae-45ea-8238-4fd66fd7e236"
     onClick={[Function]}
   >
     <span
@@ -309,40 +231,14 @@ exports[`PaletteCard PaletteCard component should properly render the component 
         }
       }
     />
-    <button
+    <span
       className="delete-button"
+      id={4}
+      onClick={[Function]}
+      role="img"
     >
-      <FontAwesomeIcon
-        border={false}
-        className="delete-icon"
-        fixedWidth={false}
-        flip={null}
-        icon={
-          Object {
-            "icon": Array [
-              448,
-              512,
-              Array [],
-              "f1f8",
-              "M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z",
-            ],
-            "iconName": "trash",
-            "prefix": "fas",
-          }
-        }
-        inverse={false}
-        listItem={false}
-        mask={null}
-        pull={null}
-        pulse={false}
-        rotation={null}
-        size={null}
-        spin={false}
-        symbol={false}
-        title=""
-        transform={null}
-      />
-    </button>
+      🗑️
+    </span>
   </div>
 </div>
 `;
