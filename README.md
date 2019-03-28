@@ -29,7 +29,7 @@ Jest and Enzyme
 Run `npm test` from the root directory  
 
 ### Final App (Desktop)
-![Screenshot-desktop]()
+![Screenshot-desktop](pallit_picker_desktop.png)
 
 ### Original Assignment: 
 [Palette Picker](http://frontend.turing.io/projects/palette-picker.html)  
