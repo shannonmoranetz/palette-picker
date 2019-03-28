@@ -15,4 +15,20 @@ describe('projectsReducer', () => {
         const result = projectsReducer(initialState, actions.setProjects(expected))
         expect(result).toEqual(expected)
     });
+
+    it('should add a new project', () => {
+        const initialState = [{ name: 'summer project'}]
+        const paletteToAdd = { name: 'winter project'}
+        const expected = [{ name: 'summer project'}, { name: 'winter project'}]
+        const result = projectsReducer(initialState, actions.addProject(paletteToAdd))
+        expect(result).toEqual(expected)
+    });
+
+    it('should delete an existing project', () => {
+        const initialState = [{ id: 1 }, { id: 2 }]
+        const projectToDelete = 2;
+        const expected = [{ id: 1}]
+        const result = projectsReducer(initialState, actions.deleteProject(projectToDelete))
+        expect(result).toEqual(expected)
+    });
 });
