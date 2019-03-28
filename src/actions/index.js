@@ -47,13 +47,3 @@ export const setHexcodes = (hexcodes) => ({
   type: 'SET_HEXCODES', 
   hexcodes
 });
-
-export const setLockedHexcodes = (hexcode) => ({
-  type: 'SET_LOCKED_HEXCODES',
-  hexcode
-});
-
-export const removeLockedHexcode = (hexcode) => ({
-  type: 'REMOVE_LOCKED_HEXCODE',
-  hexcode
-});
