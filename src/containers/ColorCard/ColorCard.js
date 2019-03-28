@@ -22,8 +22,8 @@ export class ColorCard extends Component {
   render() {
     return (
       <div className="ColorCard" style={{backgroundColor: `#${this.props.hexcode.color}`}}>
-            <FontAwesomeIcon icon={this.props.hexcode.isLocked ? faLock : faUnlock} className="lock-icon" onClick={(e) => this.toggleColorLock(e)}/>
-            <p className="hexcode">#{this.props.hexcode.color}</p>
+        <FontAwesomeIcon icon={this.props.hexcode.isLocked ? faLock : faUnlock} className="lock-icon" onClick={(e) => this.toggleColorLock(e)}/>
+        <p className="hexcode">#{this.props.hexcode.color}</p>
       </div>
     );
   }

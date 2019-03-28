@@ -8,9 +8,28 @@ describe('PaletteCard', () => {
   let wrapper;
   let mockSetHexcodes;
   beforeEach(() => {
+    let hexcodes;
     wrapper = shallow(
-      <PaletteCard projectPalettes={mockPalettes} setHexcodes={mockSetHexcodes}/>
-      )
+      <PaletteCard 
+        projectPalettes={mockPalettes} 
+        setHexcodes={mockSetHexcodes} 
+        palettes={mockPalettes} 
+        hexcodes={
+          {
+            id: 1,
+            project_id: 1,
+            name: "Summer colors",
+            color1: "FFFF82",
+            color2: "DDDCF7",
+            color3: "B5D99C",
+            color4: "FFAF66",
+            color5: "E65F5C",
+            created_at: "2019-03-26T05:17:02.735Z",
+            updated_at: "2019-03-26T05:17:02.735Z"
+          }
+        } 
+      />
+    )
     mockSetHexcodes = jest.fn()
     });
 

@@ -33,7 +33,7 @@ describe('ColorCard', () => {
   });
 
   describe('mapDispatchToProps', () => {
-    it('should call dispatch when setLockedHexcodes is called', () => {
+    it('should call dispatch when setHexcodes is called', () => {
       const mockDispatch = jest.fn()
       const actionToDispatch = actions.setHexcodes();
       const mappedProps = mapDispatchToProps(mockDispatch)
