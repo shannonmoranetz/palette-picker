@@ -4,8 +4,6 @@ import { ProjectControls, mapStateToProps, mapDispatchToProps } from './ProjectC
 import { mockProjects } from '../../__fixtures__/mockData';
 import * as actions from '../../actions';
 
-const setHexCodesMock = jest.fn();
-
 describe('ProjectControls', () => {
   let wrapper;
 
@@ -45,7 +43,7 @@ describe('ProjectControls', () => {
       const spy = jest.spyOn(wrapper.instance(), 'handleSubmitProject')
       wrapper.find('.create-project-form').simulate('submit', mockEvent)
       expect(spy).toHaveBeenCalledWith(mockEvent)
-    })
+    });
 
     it('handleChangePalette should set state with the palette name', () => {
       const mockEvent = {
@@ -60,6 +58,18 @@ describe('ProjectControls', () => {
       };
       wrapper.instance().handleChangePalette(mockEvent)
       expect(wrapper.state()).toEqual(expectedState);
+    });
+
+    it('handleSubmitPalette should call createPalette', () => {
+      const mockEvent = {
+        target: {
+          value: 'A Nice Palette'
+        },
+        preventDefault: jest.fn()
+      }
+      const spy = jest.spyOn(wrapper.instance(), 'handleSubmitPalette')
+      wrapper.find('.save-palette-form').simulate('submit', mockEvent)
+      expect(spy).toHaveBeenCalledWith(mockEvent)
     });
 
     it('setSelectedSaveLocation should set state with the selected location', () => {
