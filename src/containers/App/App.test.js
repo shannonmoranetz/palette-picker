@@ -4,6 +4,7 @@ import { App, mapStateToProps, mapDispatchToProps } from './App';
 import { fetchProjects } from '../../thunks/fetchProjects';
 import { fetchPalettes } from '../../thunks/fetchPalettes';
 import { mockProjects } from '../../__fixtures__/mockData';
+import { setLoading } from '../../actions';
 
 jest.mock('../../thunks/fetchProjects')
 jest.mock('../../thunks/fetchPalettes')
@@ -68,6 +69,14 @@ describe('App', () => {
       const actionToDispatch = fetchPalettes();
       const mappedProps = mapDispatchToProps(mockDispatch)
       mappedProps.fetchPalettes()
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    });
+
+    it('should call dispatch when setLoading is called', () => {
+      const mockDispatch = jest.fn()
+      const actionToDispatch = setLoading();
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.setLoading()
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     });
   });
