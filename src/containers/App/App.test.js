@@ -23,8 +23,9 @@ describe('App', () => {
         setLoading={setLoadingMock}
         projects={mockProjects}
       />
-      )
-    });
+    )
+  });
+
   describe('App component', () => {
     it('should properly render the component elements', () => {
       expect(wrapper).toMatchSnapshot();
