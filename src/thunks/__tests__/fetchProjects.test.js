@@ -14,12 +14,11 @@ describe('fetchProjects', () => {
     });
 
     it('should dispatch setError with a message if the response is not ok', async () => {
-        window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-            ok: false,
-            error: 'Error fetching data'
-        }))
+        window.fetch = jest.fn().mockImplementation(() => {
+            throw 'Error on fetching data'
+        })
         
         await thunk(mockDispatch)
-        expect(mockDispatch).toHaveBeenCalledWith(actions.setError('Error fetching data'))
+        expect(mockDispatch).toHaveBeenCalledWith(actions.setError('Error on fetching data'))
     });
 });
