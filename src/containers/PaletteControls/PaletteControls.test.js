@@ -4,10 +4,10 @@ import { PaletteControls, mapStateToProps, mapDispatchToProps } from './PaletteC
 import { setHexcodes } from '../../actions';
 import { mockPalettes } from '../../__fixtures__/mockData';
 
-const mockSetHexcodes = jest.fn()
-
 describe('PaletteControls', () => {
   let wrapper;
+  let mockSetHexcodes;
+  mockSetHexcodes = jest.fn()
   beforeEach(() => {
     wrapper = shallow(
       <PaletteControls setHexcodes={mockSetHexcodes} palettes={mockPalettes} hexcodes={['ffffff', 'fffff1', 'fffff2', 'fffff3', 'fffff4', 'fffff5']}/>
@@ -18,8 +18,6 @@ describe('PaletteControls', () => {
       it('should properly render the component elements', () => {
         expect(wrapper).toMatchSnapshot();
       });
-
-      // **Write: componentDidMount, findPaletteName, generateRandomColors methods here**
     });
 
     describe('mapStateToProps', () => {

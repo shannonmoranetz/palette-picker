@@ -18,6 +18,14 @@ describe('ProjectControls', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    it('should have a proper default state', () => {
+      expect(wrapper.state()).toEqual({
+        projectName: 'Warm Colors Project',
+        paletteName: '',
+        selectedSaveLocation: 'Warm colors project'
+      });
+    });
+
     it('handleChangeProject should set state with the project name', () => {
       const mockEvent = {
         target: {
