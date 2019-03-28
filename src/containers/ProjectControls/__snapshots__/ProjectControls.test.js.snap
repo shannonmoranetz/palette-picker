@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectControls ProjectControls component should properly render the component elements 1`] = `
+<div
+  className="ProjectControls"
+>
+  <form
+    className="create-project-form"
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="create-project"
+    >
+      Create your project:
+    </label>
+    <br />
+    <input
+      className="create-project-input"
+      name="create-project"
+      onChange={[Function]}
+      type="text"
+    />
+    <button
+      className="save-project-button"
+      type="submit"
+    >
+      Save Project
+    </button>
+  </form>
+  <br />
+  <form
+    className="save-palette-form"
+    onSubmit={[Function]}
+  >
+    <label
+      className="save-palette-label"
+      htmlFor="save-palette"
+    >
+      Save your palette:
+    </label>
+    <br />
+    <input
+      className="save-palette-input"
+      name="save-palette"
+      onChange={[Function]}
+      type="text"
+    />
+    <select
+      onChange={[Function]}
+      value="Warm colors project"
+    >
+      <option
+        id="Warm colors project"
+        key="0"
+        value="Warm colors project"
+      >
+        Warm colors project
+      </option>
+      <option
+        id="Cool colors project"
+        key="1"
+        value="Cool colors project"
+      >
+        Cool colors project
+      </option>
+      <option
+        id="Neutral colors project"
+        key="2"
+        value="Neutral colors project"
+      >
+        Neutral colors project
+      </option>
+    </select>
+    <button
+      className="save-palette-button"
+      type="submit"
+    >
+      Save Palette
+    </button>
+  </form>
+</div>
+`;
