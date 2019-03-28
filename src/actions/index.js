@@ -13,9 +13,29 @@ export const setProjects = (projects) => ({
   projects
 });
 
+export const addProject = (project) => ({
+  type: 'ADD_PROJECT', 
+  project
+});
+
+export const deleteProject = (id) => ({
+  type: 'DELETE_PROJECT', 
+  id
+});
+
 export const setPalettes = (palettes) => ({
   type: 'SET_PALETTES', 
   palettes
+});
+
+export const addPalette = (palette) => ({
+  type: 'ADD_PALETTE', 
+  palette
+});
+
+export const deletePalette = (id) => ({
+  type: 'DELETE_PALETTE', 
+  id
 });
 
 export const setLoadedProject = (loadedProject) => ({
@@ -26,14 +46,4 @@ export const setLoadedProject = (loadedProject) => ({
 export const setHexcodes = (hexcodes) => ({
   type: 'SET_HEXCODES', 
   hexcodes
-});
-
-export const setLockedHexcodes = (hexcode) => ({
-  type: 'SET_LOCKED_HEXCODES',
-  hexcode
-});
-
-export const removeLockedHexcode = (hexcode) => ({
-  type: 'REMOVE_LOCKED_HEXCODE',
-  hexcode
 });

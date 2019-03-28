@@ -5,7 +5,6 @@ import { loadingReducer } from './loadingReducer';
 import { loadedProjectReducer } from './loadedProjectReducer';
 import { palettesReducer } from './palettesReducer';
 import { hexcodesReducer } from './hexcodesReducer';
-import { lockedHexcodesReducer } from './lockedHexcodesReducer';
 
 const rootReducer = combineReducers({
   projects: projectsReducer,
@@ -13,8 +12,7 @@ const rootReducer = combineReducers({
   isLoading: loadingReducer,
   error: errorReducer,
   loadedProject: loadedProjectReducer,
-  hexcodes: hexcodesReducer,
-  lockedHexcodes: lockedHexcodesReducer
+  hexcodes: hexcodesReducer
 });
 
 export default rootReducer;

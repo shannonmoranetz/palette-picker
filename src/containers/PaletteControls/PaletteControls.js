@@ -5,13 +5,20 @@ import { setHexcodes } from '../../actions/index';
 export class PaletteControls extends Component {
 
   componentDidMount = () => {
-    this.generateRandomColors();
+    const initialHexcodes = [
+      {color: 'FFFF82', isLocked: false},
+      {color: 'DDDCF7', isLocked: false},
+      {color: 'B5D99C', isLocked: false},
+      {color: 'FFAF66', isLocked: false},
+      {color: 'E65F5C', isLocked: false}
+    ]
+    this.props.setHexcodes(initialHexcodes);
   }
 
   findPaletteName = () => {
     const  { palettes } = this.props;
     let matchingPalette = palettes.filter((palette) => {
-      return palette.color1.includes(this.props.hexcodes[0])
+      return palette.color1.includes(this.props.hexcodes[0].color)
     })
     if (!matchingPalette.length) {
       matchingPalette = [{ name: 'Random' }]
@@ -21,16 +28,21 @@ export class PaletteControls extends Component {
 
   generateRandomColors = () => {
     let possibleHexValues = "0123456789ABCDEF";
-    let newColors = [];
-    for (let i = 0; i < 5; i++) {
-      let hexStringArray = [];
-      for (let j = 0; j < 6; j++) {
-        let generatedHexcode = possibleHexValues[(Math.floor(Math.random() * 16))]; 
-        hexStringArray.push(generatedHexcode);
+    let newColors = this.props.hexcodes.map((hexcode) => {
+      let returnedHex = [];
+      if (hexcode.isLocked === true) {
+        returnedHex.push(hexcode.color);
+      } else {
+        let hexStringArray = [];
+        for (let j = 0; j < 6; j++) {
+          let generatedHexcode = possibleHexValues[(Math.floor(Math.random() * 16))]; 
+          hexStringArray.push(generatedHexcode);
       }
-      let hexcode = hexStringArray.join('');
-      newColors.push(hexcode);
-    }
+        let randomHex = hexStringArray.join('');
+        returnedHex.push(randomHex);
+      }
+      return {color: returnedHex[0], isLocked: hexcode.isLocked};
+    })
     this.props.setHexcodes(newColors);
   }
 
@@ -48,7 +60,8 @@ export class PaletteControls extends Component {
 
 export const mapStateToProps = (state) => ({
   palettes: state.palettes,
-  hexcodes: state.hexcodes
+  hexcodes: state.hexcodes,
+  lockedHexcodes: state.lockedHexcodes
 });
 
 export const mapDispatchToProps = (dispatch) => ({
