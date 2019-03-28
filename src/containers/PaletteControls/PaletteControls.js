@@ -5,7 +5,8 @@ import { setHexcodes } from '../../actions/index';
 export class PaletteControls extends Component {
 
   componentDidMount = () => {
-    this.generateRandomColors();
+    this.props.setHexcodes();
+
   }
 
   findPaletteName = () => {
@@ -21,18 +22,21 @@ export class PaletteControls extends Component {
 
   generateRandomColors = () => {
     let possibleHexValues = "0123456789ABCDEF";
-    let newColors = [];
-    
-    for (let i = 0; i < 5; i++) {
-      let hexStringArray = [];
-      for (let j = 0; j < 6; j++) {
-        let generatedHexcode = possibleHexValues[(Math.floor(Math.random() * 16))]; 
-        hexStringArray.push(generatedHexcode);
+    let newColors = this.props.hexcodes.map((hexcode) => {
+      let returnedHex = [];
+      if (hexcode.isLocked === true) {
+        returnedHex.push(hexcode.color);
+      } else {
+        let hexStringArray = [];
+        for (let j = 0; j < 6; j++) {
+          let generatedHexcode = possibleHexValues[(Math.floor(Math.random() * 16))]; 
+          hexStringArray.push(generatedHexcode);
       }
-      let hexcode = hexStringArray.join('');
-      newColors.push({ color: hexcode, isLocked: false});
-    }
-    // console.log(newColors)
+        let randomHex = hexStringArray.join('');
+        returnedHex.push(randomHex);
+      }
+      return {color: returnedHex, isLocked: hexcode.isLocked};
+    })
     this.props.setHexcodes(newColors);
   }
 
