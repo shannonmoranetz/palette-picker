@@ -9,19 +9,15 @@ describe('fetchPalettes', () => {
 
     beforeEach(() => {
         id = 1
-        thunk = fetchPalettes()
+        thunk = fetchPalettes(id)
         mockDispatch = jest.fn()
     });
 
     it('should dispatch setError with a message if the response is not ok', async () => {
-        window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-            response: {
-                statusText: 'Error on fetching data'
-            },
-            ok: false,
-        }))
-        
+        window.fetch = jest.fn().mockImplementation(() => {
+            throw 'Error on fetching data'
+        })
         await thunk(mockDispatch)
-        expect(mockDispatch).toHaveBeenCalledWith(actions.setError({error: 'Error on fetching data'}))
+        expect(mockDispatch).toHaveBeenCalledWith(actions.setError('Error on fetching data'))
     });
 });
