@@ -5,7 +5,10 @@ Description
 ### Set-Up Frontend:
 - Clone this repo
 - Run `npm install` from the root directory  
-- Run `npm start` and visit localhost:3000 in your browser  
+- Run `npm start` and visit localhost:3000 in your browser
+
+### Backend API Repo:
+- https://github.com/shannonmoranetz/palette-picker-api
 
 ### Backend API URL:
 - https://palette-picker-api.herokuapp.com/
@@ -37,4 +40,5 @@ Run `npm test` from the root directory
 
 ### Future Enhancements:
 - Media Queries
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
