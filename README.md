@@ -1,5 +1,5 @@
 # Palette Picker
-Palette Picker is a React app based on the website ![Coolors](https://coolors.co/app), that helps users generate color palettes for websites and other design projects. 
+Palette Picker is a React app based on the website [Coolors](https://coolors.co/app), that helps users generate color palettes for websites and other design projects. 
 
 ### Set-Up Frontend:
 - Clone this repo
@@ -39,7 +39,7 @@ Run `npm test` from the root directory
 
 ### Design:
 Inspiration from Dribble: cool color buttons with hover effect
-![Dribble](https://dribbble.com/shots/6229834-Language-learning-iOS-app)
+[Dribble](https://dribbble.com/shots/6229834-Language-learning-iOS-app)
 
 ### Future Enhancements:
 - Media Queries
