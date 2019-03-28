@@ -18,8 +18,6 @@ describe('ProjectCard', () => {
     it('should properly render the component elements', () => {
       expect(wrapper).toMatchSnapshot();
     });
-
-    // **Write: findProjectPalette, returnElements, createPaletteId, updatedSelectedPalette tests here**
   });
 
   describe('mapStateToProps', () => {

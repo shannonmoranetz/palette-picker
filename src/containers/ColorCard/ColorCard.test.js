@@ -30,8 +30,6 @@ describe('ColorCard', () => {
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps).toEqual(expected)
     });
-
-    // **test toggleColorLock method here**
   });
 
   describe('mapDispatchToProps', () => {
