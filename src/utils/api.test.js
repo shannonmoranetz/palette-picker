@@ -9,15 +9,31 @@ describe('fetchData', () => {
     beforeEach(() => {
         mockId = 1
         path = '/projects';
+        data = {
+            "name": "NewProject"
+        };
+    });
+    
+    it('should call fetch to GET with the correct parameters', () => {
+        const expectedUrl = `https://palette-picker-api.herokuapp.com/api/v1${path}`;
+        window.fetch = jest.fn();
         method = 'GET';
-        data = null;
+        fetchData(path, method);
+        expect(window.fetch).toHaveBeenCalledWith(expectedUrl, null);
     });
 
-    it('should call fetch with the correct parameters', () => {
-    const expectedUrl = `https://palette-picker-api.herokuapp.com/api/v1${path}`;
-    window.fetch = jest.fn();
-    fetchData(path, method);
-    expect(window.fetch).toHaveBeenCalledWith(expectedUrl, data);
+    it('should call fetch to POST with the correct parameters', () => {
+        const expectedUrl = `https://palette-picker-api.herokuapp.com/api/v1${path}`;
+        const expectedParams = {
+            method: method,
+            body: JSON.stringify(data),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        };
+        window.fetch = jest.fn();
+        fetchData(path, method, data);
+        expect(window.fetch).toHaveBeenCalledWith(expectedUrl, data);
     });
 
     it('should return an id if everything is okay with an ok status', async () => {
