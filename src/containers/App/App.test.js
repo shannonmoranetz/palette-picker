@@ -3,19 +3,24 @@ import { shallow } from 'enzyme';
 import { App, mapStateToProps, mapDispatchToProps } from './App';
 import { fetchProjects } from '../../thunks/fetchProjects';
 import { fetchPalettes } from '../../thunks/fetchPalettes';
+import { mockProjects } from '../../__fixtures__/mockData';
 
 jest.mock('../../thunks/fetchProjects')
 jest.mock('../../thunks/fetchPalettes')
 
 describe('App', () => {
   let wrapper;
-  let fetchProjectsMock;
-  let fetchPalettesMock;
+  let fetchProjectsMock = jest.fn();
+  let fetchPalettesMock = jest.fn();
+  let setLoadingMock = jest.fn();
+
   beforeEach(() => {
     wrapper = shallow(
       <App 
         fetchProjects={fetchProjectsMock}
         fetchPalettes={fetchPalettesMock}
+        setLoading={setLoadingMock}
+        projects={mockProjects}
       />
       )
     });

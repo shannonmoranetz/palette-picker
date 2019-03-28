@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import uuid from 'uuid/v4';
 import { setHexcodes, deletePalette } from '../../actions/index';
 import { fetchData } from '../../utils/api.js';
 
 export class PaletteCard extends Component {
 
   returnPalettes = () => {
-    return this.props.projectPalettes.map((palette) => {
+    return this.props.projectPalettes.map((palette, i) => {
       const { name, color1, color2, color3, color4, color5, id } = palette;
       return (
-        <div key={uuid()} className="mapped-palettes" onClick={() => this.updateHexcodes(id)}>
+        <div key={i} className="mapped-palettes" onClick={() => this.updateHexcodes(id)}>
           <span className="palette-name">{name}</span>
           <span className="color-minibox" style={{ backgroundColor: `#${color1}`}}></span>
           <span className="color-minibox" style={{ backgroundColor: `#${color2}`}}></span>

@@ -5,7 +5,7 @@ exports[`ProjectList ProjectList component should properly render the component 
   className="ProjectList"
 >
   <Connect(ProjectCard)
-    key="309fe5c1-25fa-4f0d-81da-997e33a1acc0"
+    key="0"
     project={
       Object {
         "created_at": "2019-03-26T05:17:02.689Z",
@@ -16,7 +16,7 @@ exports[`ProjectList ProjectList component should properly render the component 
     }
   />
   <Connect(ProjectCard)
-    key="855407b9-7969-441d-992e-6d013a2d02b2"
+    key="1"
     project={
       Object {
         "created_at": "2019-03-26T05:17:02.702Z",
@@ -27,7 +27,7 @@ exports[`ProjectList ProjectList component should properly render the component 
     }
   />
   <Connect(ProjectCard)
-    key="b2071439-ac7e-4f37-a364-f4e946dfb7d9"
+    key="2"
     project={
       Object {
         "created_at": "2019-03-26T05:17:02.727Z",

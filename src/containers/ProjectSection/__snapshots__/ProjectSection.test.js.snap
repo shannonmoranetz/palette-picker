@@ -17,7 +17,9 @@ exports[`ProjectSection ProjectSection component should properly render the comp
     className="content-container"
   >
     <Connect(ProjectControls) />
+    <hr />
     <Search />
+    <hr />
     <Connect(ProjectList) />
   </div>
 </div>

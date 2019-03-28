@@ -23,16 +23,8 @@ describe('PaletteCard', () => {
   describe('mapStateToProps', () => {
     it('should return an object with palettes as keys', () => {
       const mockState = {
-        projects: [],
-        isLoading: false,
-        error: '',
         palettes: [],
-        extra: '',
-        lockedHexcodes: [],
-        currentPaletteId: 1,
-        randomHexcodes: [],
-        shouldDisplayRandom: true,
-        hexcodes: []
+        extra: ''
       }
       const expected = {
         palettes: []
