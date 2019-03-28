@@ -1,13 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { ColorCard, mapStateToProps, mapDispatchToProps } from './ColorCard';
-import { setLockedHexcodes, removeLockedHexcode } from '../../actions';
+import * as actions from '../../actions';
+import { mockHexcodes } from '../../__fixtures__/mockData';
 
 describe('ColorCard', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(
-      <ColorCard color={'ffffff'}/>
+      <ColorCard hexcode={mockHexcodes}/>
       )
     });
     
@@ -18,17 +19,13 @@ describe('ColorCard', () => {
   });
 
   describe('mapStateToProps', () => {
-    it('should return an object with lockedHexcodes', () => {
+    it('should return an object with hexcodes', () => {
       const mockState = {
-        projects: [],
-        isLoading: false,
-        error: '',
-        palettes: [],
-        extra: '',
-        lockedHexcodes: []
+        hexcodes: [],
+        extra: ''
       }
       const expected = {
-        lockedHexcodes: []
+        hexcodes: []
       }
       const mappedProps = mapStateToProps(mockState)
       expect(mappedProps).toEqual(expected)
@@ -40,17 +37,9 @@ describe('ColorCard', () => {
   describe('mapDispatchToProps', () => {
     it('should call dispatch when setLockedHexcodes is called', () => {
       const mockDispatch = jest.fn()
-      const actionToDispatch = setLockedHexcodes();
+      const actionToDispatch = actions.setHexcodes();
       const mappedProps = mapDispatchToProps(mockDispatch)
-      mappedProps.setLockedHexcodes()
-      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
-    });
-
-    it('should call dispatch when removeLockedHexcode is called', () => {
-      const mockDispatch = jest.fn()
-      const actionToDispatch = removeLockedHexcode();
-      const mappedProps = mapDispatchToProps(mockDispatch)
-      mappedProps.removeLockedHexcode()
+      mappedProps.setHexcodes()
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     });
   });

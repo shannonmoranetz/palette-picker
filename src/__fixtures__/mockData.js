@@ -69,3 +69,26 @@ export const mockPalettes = [
         updated_at: "2019-03-26T05:17:02.757Z"
     }
 ]
+
+export const mockHexcodes = [
+    {
+        color: 'ffffff',
+        isLocked: false
+    },
+    {
+        color: 'ffffff',
+        isLocked: false
+    },
+    {
+        color: 'ffffff',
+        isLocked: false
+    },
+    {
+        color: 'ffffff',
+        isLocked: false
+    },
+    {
+        color: 'ffffff',
+        isLocked: false
+    }
+]

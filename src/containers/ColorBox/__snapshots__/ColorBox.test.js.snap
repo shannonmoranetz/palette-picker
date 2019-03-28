@@ -9,23 +9,23 @@ exports[`ColorBox ColorBox component should properly render the component elemen
   >
     <Connect(ColorCard)
       hexcode="ffffff"
-      key="ab4c8538-bde5-461e-8518-9b78c667d948"
+      key="0"
     />
     <Connect(ColorCard)
       hexcode="fffff1"
-      key="dc5b8588-1be9-486d-beaf-7e9cc972134e"
+      key="1"
     />
     <Connect(ColorCard)
       hexcode="fffff2"
-      key="ca5caf6c-ca5d-40a6-9ed6-5c0ec4f7db2b"
+      key="2"
     />
     <Connect(ColorCard)
       hexcode="fffff3"
-      key="1cda4b69-a5fe-4d06-91a9-55a47b2e9f31"
+      key="3"
     />
     <Connect(ColorCard)
       hexcode="fffff4"
-      key="1ab14239-e64b-40da-8ff1-c56c20d4b88f"
+      key="4"
     />
   </div>
 </div>

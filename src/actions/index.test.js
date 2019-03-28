@@ -61,24 +61,4 @@ describe('actions', () => {
         const result = actions.setHexcodes(hexcodes)
         expect(result).toEqual(expected)
     });
-
-    it('should return a type of SET_LOCKED_HEXCODES with an array of locked hexcodes', () => {
-        const hexcode = "E522FA"
-        const expected = {
-            type: 'SET_LOCKED_HEXCODES',
-            hexcode
-        }
-        const result = actions.setLockedHexcodes(hexcode)
-        expect(result).toEqual(expected)
-    });
-
-    it('should return a type of REMOVE_LOCKED_HEXCODE with a hexcode', () => {
-        const hexcode = "18ABBB"
-        const expected = {
-            type: 'REMOVE_LOCKED_HEXCODE',
-            hexcode
-        }
-        const result = actions.removeLockedHexcode(hexcode)
-        expect(result).toEqual(expected)
-    });
 });

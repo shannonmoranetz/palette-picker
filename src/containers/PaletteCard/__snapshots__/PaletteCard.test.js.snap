@@ -6,7 +6,7 @@ exports[`PaletteCard PaletteCard component should properly render the component 
 >
   <div
     className="mapped-palettes"
-    key="ac5b963f-8087-4f03-aefa-fa08602c1846"
+    key="0"
     onClick={[Function]}
   >
     <span
@@ -65,7 +65,7 @@ exports[`PaletteCard PaletteCard component should properly render the component 
   </div>
   <div
     className="mapped-palettes"
-    key="b225b8e9-3b7a-4ac6-b286-ab86783c9580"
+    key="1"
     onClick={[Function]}
   >
     <span
@@ -124,7 +124,7 @@ exports[`PaletteCard PaletteCard component should properly render the component 
   </div>
   <div
     className="mapped-palettes"
-    key="49eb918a-3efc-4ee6-b5f6-515912219fd5"
+    key="2"
     onClick={[Function]}
   >
     <span
@@ -183,7 +183,7 @@ exports[`PaletteCard PaletteCard component should properly render the component 
   </div>
   <div
     className="mapped-palettes"
-    key="16e6f00d-30ba-4ef1-bfb2-28d941e1980f"
+    key="3"
     onClick={[Function]}
   >
     <span

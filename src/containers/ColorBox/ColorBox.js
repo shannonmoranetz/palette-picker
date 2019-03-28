@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ColorCard from '../../containers/ColorCard/ColorCard';
-import uuid from 'uuid/v4';
 
 export class ColorBox extends Component {
 
 	renderColorCards = () => {
 		const { hexcodes } = this.props;
-		return hexcodes.map((hexcode) => {
-			return <ColorCard key={uuid()} hexcode={hexcode} />
+		return hexcodes.map((hexcode, i) => {
+			return <ColorCard key={i} hexcode={hexcode} />
 		})
 	}
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { fetchData } from '../../utils/api.js';
 import { addPalette, addProject } from '../../actions/index';
 import { connect } from 'react-redux';
-import uuid from 'uuid/v4';
 
 export class ProjectControls extends Component {
   constructor() {
@@ -83,7 +82,7 @@ export class ProjectControls extends Component {
       }
       let response = await fetchData(`/palettes`, 'POST', paletteData);
       let palette = {...paletteData, id: response.id}
-      addPalette(palette)
+      addPalette(palette);
     }
   }
 
@@ -97,8 +96,8 @@ export class ProjectControls extends Component {
   populateDropdown = () => { 
     return (
     <select value={this.state.selectedSaveLocation} onChange={(e) => this.setSelectedSaveLocation(e)}>
-      {this.props.projects.map((project) => {
-      return <option id={project.name}value={project.name} key={uuid()} >{project.name}</option>
+      {this.props.projects.map((project, i) => {
+      return <option id={project.name}value={project.name} key={i}>{project.name}</option>
     })}
     </select>
     )
