@@ -1,6 +1,12 @@
 # Palette Picker
 Palette Picker is a React app based on the website [Coolors](https://coolors.co/app), that helps users generate color palettes for websites and other design projects. 
 
+### Deployed App Link:
+[Palit](https://palit-picker.herokuapp.com/)
+
+### Final App (Desktop)
+![Screenshot-desktop](pallit_picker_desktop.png)
+
 ### Set-Up Frontend:
 - Clone this repo
 - Run `npm install` from the root directory  
@@ -26,9 +32,6 @@ Palette Picker is a React app based on the website [Coolors](https://coolors.co/
 ### Testing:
 Jest and Enzyme
 Run `npm test` from the root directory  
-
-### Final App (Desktop)
-![Screenshot-desktop](pallit_picker_desktop.png)
 
 ### Original Assignment: 
 [Palette Picker](http://frontend.turing.io/projects/palette-picker.html)  
