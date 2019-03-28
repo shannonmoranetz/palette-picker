@@ -4,6 +4,8 @@ import { ProjectControls, mapStateToProps, mapDispatchToProps } from './ProjectC
 import { mockProjects } from '../../__fixtures__/mockData';
 import * as actions from '../../actions';
 
+const setHexCodesMock = jest.fn();
+
 describe('ProjectControls', () => {
   let wrapper;
 
@@ -14,7 +16,7 @@ describe('ProjectControls', () => {
     });
 
   describe('ProjectControls component', () => {
-    it.skip('should properly render the component elements', () => {
+    it('should properly render the component elements', () => {
       expect(wrapper).toMatchSnapshot();
     });
   });

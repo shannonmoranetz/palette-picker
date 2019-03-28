@@ -4,18 +4,18 @@ import { PaletteControls, mapStateToProps, mapDispatchToProps } from './PaletteC
 import { setHexcodes } from '../../actions';
 import { mockPalettes } from '../../__fixtures__/mockData';
 
+const mockSetHexcodes = jest.fn()
+
 describe('PaletteControls', () => {
   let wrapper;
-  let mockSetHexcodes;
   beforeEach(() => {
     wrapper = shallow(
       <PaletteControls setHexcodes={mockSetHexcodes} palettes={mockPalettes} hexcodes={['ffffff', 'fffff1', 'fffff2', 'fffff3', 'fffff4', 'fffff5']}/>
       )
-      mockSetHexcodes = jest.fn()
     });
 
     describe('PaletteControls component', () => {
-      it.skip('should properly render the component elements', () => {
+      it('should properly render the component elements', () => {
         expect(wrapper).toMatchSnapshot();
       });
 
@@ -23,17 +23,10 @@ describe('PaletteControls', () => {
     });
 
     describe('mapStateToProps', () => {
-      it.skip('should return an object with palettes and hexcodes as keys', () => {
+      it('should return an object with palettes and hexcodes as keys', () => {
         const mockState = {
-          projects: [],
-          isLoading: false,
-          error: '',
           palettes: [],
           extra: '',
-          lockedHexcodes: [],
-          currentPaletteId: 1,
-          randomHexcodes: [],
-          shouldDisplayRandom: true,
           hexcodes: []
         }
         const expected = {
@@ -46,7 +39,7 @@ describe('PaletteControls', () => {
     });
 
     describe('mapDispatchToProps', () => {
-      it.skip('should call dispatch when setHexcodes is called', () => {
+      it('should call dispatch when setHexcodes is called', () => {
         const mockDispatch = jest.fn()
         const actionToDispatch = setHexcodes();
         const mappedProps = mapDispatchToProps(mockDispatch)

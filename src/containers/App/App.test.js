@@ -34,8 +34,6 @@ describe('App', () => {
       wrapper.instance().componentDidMount();
       expect(wrapper.instance().initialFetch).toHaveBeenCalled();
     });
-    it.skip('InitialFetch should call fetchProjects and fetchPalettes', async () => {
-    });
   });
 
   describe('mapStateToProps', () => {

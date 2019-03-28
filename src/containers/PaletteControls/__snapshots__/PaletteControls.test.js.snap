@@ -1,3 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PaletteControls PaletteControls component should properly render the component elements 1`] = `undefined`;
+exports[`PaletteControls PaletteControls component should properly render the component elements 1`] = `
+<div
+  className="PaletteControls"
+>
+  <div
+    className="palette-controls-container"
+  >
+    <button
+      className="generate-button"
+      onClick={[Function]}
+    >
+      Generate New Palette!
+    </button>
+    <h2
+      className="palette-header"
+    >
+      RANDOM
+    </h2>
+  </div>
+</div>
+`;

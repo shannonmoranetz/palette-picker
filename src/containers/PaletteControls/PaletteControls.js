@@ -60,8 +60,7 @@ export class PaletteControls extends Component {
 
 export const mapStateToProps = (state) => ({
   palettes: state.palettes,
-  hexcodes: state.hexcodes,
-  lockedHexcodes: state.lockedHexcodes
+  hexcodes: state.hexcodes
 });
 
 export const mapDispatchToProps = (dispatch) => ({
