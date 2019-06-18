@@ -1,51 +1,51 @@
-# Palette Picker
-Palette Picker is a React app based on the website [Coolors](https://coolors.co/app), that helps users generate color palettes for websites and other design projects. 
+# Palette Picker (paLit)
 
-### Deployed App Link:
-[Palit](https://palit-picker.herokuapp.com/)
+## Generate color palettes for design projects (front-end)
 
-### Final App (Desktop)
-![Screenshot-desktop](pallit_picker_desktop.png)
+* * *
 
-### Set-Up Frontend:
-- Clone this repo
-- Run `npm install` from the root directory  
-- Run `npm start` and visit localhost:3000 in your browser
+### Randomized hex palette generation. Inspired by the web app Coolors.
 
-### Backend API Repo:
-- https://github.com/shannonmoranetz/palette-picker-api
+![Screenshot](https://i.imgur.com/Dd5GEVZ.png)
 
-### Backend API URL:
-- https://palette-picker-api.herokuapp.com/
+### Demo
 
-### Primary FE Technologies Used:
-* React
-* Redux
-* JavaScript
-* CSS/SCSS
+[Click to view live app demo](https://palit-picker.herokuapp.com) 
 
-### Primary BE Technologies Used:
-* Express
-* Knex
-* PostgreSQL
+### Features
 
-### Testing:
-Jest and Enzyme
-Run `npm test` from the root directory  
+*   Random hexcode generation
+*   Save palettes to user-created projects
+*   Color-locking functionality
 
-### Original Assignment: 
-[Palette Picker](http://frontend.turing.io/projects/palette-picker.html)  
+### Tech Stack
 
-### Wireframes:
-#### Desktop View:
-![Wireframes-desktop](pallit_picker_ss.png)
+*   React ~ Redux & Redux Thunks
+*   CSS ~ Sass
+*   Node & Express
+*   Knex
+*   PostgreSQL
 
-### Design:
-Inspiration from Dribble: cool color buttons with hover effect
-[Dribble](https://dribbble.com/shots/6229834-Language-learning-iOS-app)
+### Installation
 
-### Future Enhancements:
-- Media Queries
-- Create functionality for searching projects by hexcode
+* Back-end:
+```
+https://github.com/shannonmoranetz/palette-picker-api
+```
+* Dependencies:
+```
+npm i
+```
+* Start:
+```
+npm start
+```
+* Test:
+```
+npm test
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Contributors
+
+* [Shannon Moranetz](https://github.com/shannonmoranetz)
+* [Heather Hartley](https://github.com/hlhartley)
